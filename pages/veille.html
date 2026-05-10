@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille technologique — Victor Issad</title>
+  <meta name="description" content="Veille technologique — Sécurité des systèmes legacy dans le secteur bancaire. DORA, COBOL, incidents documentés. Victor Issad, BTS SIO SLAM 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">VictorIssad</a>
+      <div class="nav__links" id="nav-links">
+        <a href="../index.html" class="nav__link">Accueil</a>
+        <a href="about.html" class="nav__link">À propos</a>
+        <a href="competences.html" class="nav__link">Compétences</a>
+        <a href="certifications.html" class="nav__link">Certifications</a>
+        <a href="projets.html" class="nav__link">Projets</a>
+        <a href="veille.html" class="nav__link nav__link--active">Veille</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__theme-btn js-theme-toggle" aria-label="Changer le thème">
+          <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav__burger js-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Veille technologique</h1>
+        <p>Sécurité des systèmes legacy dans le secteur bancaire et financier.</p>
+        <p style="margin-top:8px;font-size:0.85rem;color:var(--text-muted);">De la dette technique à la conformité DORA — pourquoi le code des années 1970 est devenu un enjeu réglementaire en 2025.</p>
+      </div>
+
+      <!-- ACCROCHE -->
+      <section class="section fade-in">
+        <p class="section__label">Problématique</p>
+        <h2 class="section__title">Le talon d'Achille des grandes banques</h2>
+        <p>
+          <strong>95&nbsp;% des distributeurs automatiques de billets dans le monde tournent encore sur des systèmes datant des années 1970-1980.</strong>
+          Pendant que les banques investissent des milliards dans leurs apps mobiles, leur cœur névralgique repose sur du code
+          plus vieux que leurs propres directeurs informatiques. Ces systèmes legacy ne sont pas un héritage nostalgique —
+          ce sont des surfaces d'attaque béantes.
+        </p>
+        <p class="mt-md">
+          En janvier 2025, le règlement <strong>DORA</strong> (Digital Operational Resilience Act) est entré en vigueur
+          pour rappeler à toute l'industrie financière européenne que l'ancienneté d'un système n'est pas une excuse :
+          c'est une responsabilité.
+        </p>
+
+        <div class="stat-grid mt-xl">
+          <div class="stat-card">
+            <div class="stat-card__num">800 Md</div>
+            <div class="stat-card__lbl">lignes de COBOL actives dans le monde</div>
+            <div class="stat-card__src">Reuters, 2023</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num">68&nbsp;%</div>
+            <div class="stat-card__lbl">des banques EU citent leur legacy comme risque principal</div>
+            <div class="stat-card__src">McKinsey, 2022</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num">4h</div>
+            <div class="stat-card__lbl">délai max DORA pour déclarer un incident ICT majeur</div>
+            <div class="stat-card__src">Règlement UE 2022/2554</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num">60&nbsp;%</div>
+            <div class="stat-card__lbl">des violations bancaires exploitent des systèmes non patchés +12 mois</div>
+            <div class="stat-card__src">Verizon DBIR, 2023</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DÉFINITION -->
+      <section class="section fade-in">
+        <p class="section__label">Définition</p>
+        <h2 class="section__title">C'est quoi un système legacy ?</h2>
+        <p>
+          Dans le secteur bancaire, un système <strong>legacy</strong> désigne toute infrastructure logicielle héritée du passé,
+          maintenue en production faute de remplacement viable. Cela recouvre du code COBOL des années 60-80,
+          des dépendances obsolètes (JDK anciens, TLS 1.0), un couplage fort entre composants,
+          et souvent une absence totale de documentation — les développeurs d'origine étant retraités ou décédés.
+        </p>
+        <p class="mt-md">
+          JPMorgan Chase maintient 45 millions de lignes COBOL en production. Bank of America tourne encore sur des systèmes
+          core des années 1980. La Banque de France migre progressivement TARGET2 depuis 2022.
+        </p>
+      </section>
+
+      <!-- FRISE CHRONOLOGIQUE -->
+      <section class="section fade-in">
+        <p class="section__label">Chronologie</p>
+        <h2 class="section__title">2003 → 2026 — Les grandes étapes</h2>
+
+        <div class="timeline mt-lg">
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__body">
+              <div class="timeline__date">2003</div>
+              <div class="timeline__title">Ver Slammer — faille SQL Server non patchée</div>
+              <div class="timeline__desc">13 000 distributeurs Bank of America hors service en quelques heures.</div>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__body">
+              <div class="timeline__date">2008</div>
+              <div class="timeline__title">Crise financière → gel des budgets IT bancaires</div>
+              <div class="timeline__desc">Prolongation forcée des systèmes legacy pour 10+ ans dans la plupart des grandes banques mondiales.</div>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot--current timeline__dot"></div>
+            <div class="timeline__body">
+              <div class="timeline__date">2012</div>
+              <div class="timeline__title">Panne RBS / NatWest — composant CA7 des années 1980</div>
+              <div class="timeline__desc">6,5 millions de clients sans accès pendant 6 jours. 175 M£ d'amende FSA.</div>
+              <div class="timeline__source">Financial Services Authority UK, rapport 2012</div>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot--current timeline__dot"></div>
+            <div class="timeline__body">
+              <div class="timeline__date">2016</div>
+              <div class="timeline__title">Bangladesh Bank — attaque SWIFT, 81 M$ volés</div>
+              <div class="timeline__desc">Terminal SWIFT connecté via switch réseau à 10$ sans firewall, système non patché.</div>
+              <div class="timeline__source">BAE Systems Threat Intelligence Report, 2016</div>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot--current timeline__dot"></div>
+            <div class="timeline__body">
+              <div class="timeline__date">2018</div>
+              <div class="timeline__title">Panne TSB Bank — migration legacy ratée</div>
+              <div class="timeline__desc">1,9 million de clients bloqués. 330 M£ de pertes. PDG démissionne.</div>
+              <div class="timeline__source">Financial Conduct Authority UK, rapport 2019</div>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__body">
+              <div class="timeline__date">2022</div>
+              <div class="timeline__title">Publication du règlement DORA (UE 2022/2554)</div>
+              <div class="timeline__desc">Entrée en vigueur prévue janvier 2025. Obligations de résilience pour toutes les entités financières EU.</div>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__body">
+              <div class="timeline__date">2023</div>
+              <div class="timeline__title">74&nbsp;% des banques EU ont des systèmes de plus de 15 ans — IBM</div>
+              <div class="timeline__desc">Accélération des budgets de modernisation post-COVID.</div>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot--current timeline__dot"></div>
+            <div class="timeline__body">
+              <div class="timeline__date">17 janv. 2025</div>
+              <div class="timeline__title">DORA entre en vigueur</div>
+              <div class="timeline__desc">Obligations contraignantes de résilience ICT pour banques, assureurs et leurs prestataires technologiques en UE. MTB111 by Creative, en tant qu'ESN cliente de BNP/Allianz, est directement concernée.</div>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__body">
+              <div class="timeline__date">2026</div>
+              <div class="timeline__title">Premières sanctions DORA attendues</div>
+              <div class="timeline__desc">Amendes pour non-conformité. Pression maximale sur les systèmes legacy non audités.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VULNÉRABILITÉS -->
+      <section class="section fade-in">
+        <p class="section__label">Analyse</p>
+        <h2 class="section__title">Pourquoi c'est un problème de sécurité ?</h2>
+
+        <div class="vuln-grid mt-md">
+          <div class="vuln-card">
+            <div class="vuln-card__tag">CVE</div>
+            <div class="vuln-card__title">Absence de patches</div>
+            <div class="vuln-card__text">Un système sous Java 8 ou Windows Server 2008 ne reçoit plus de correctifs. Chaque CVE publiée est une porte d'entrée qui reste ouverte indéfiniment.</div>
+          </div>
+          <div class="vuln-card">
+            <div class="vuln-card__tag">PROTO</div>
+            <div class="vuln-card__title">Protocoles obsolètes</div>
+            <div class="vuln-card__text">TLS 1.0, SSLv3, MD5 — cassés cryptographiquement, encore présents dans des flux inter-bancaires. OWASP Top 10 depuis 2013.</div>
+          </div>
+          <div class="vuln-card">
+            <div class="vuln-card__tag">ARCH</div>
+            <div class="vuln-card__title">Couplage fort</div>
+            <div class="vuln-card__text">Sans isolation (microservices, conteneurisation), l'attaquant qui entre par une porte accède à tout. Une faille = tout le SI exposé.</div>
+          </div>
+          <div class="vuln-card vuln-card--accent">
+            <div class="vuln-card__tag">LOG</div>
+            <div class="vuln-card__title">Absence de logs structurés</div>
+            <div class="vuln-card__text">Sans horodatage, sans niveau de criticité — impossible de détecter une intrusion, impossible de répondre à un audit DORA. La traçabilité est une obligation réglementaire, pas une option.</div>
+          </div>
+          <div class="vuln-card">
+            <div class="vuln-card__tag">RGPD</div>
+            <div class="vuln-card__title">Audit et conformité</div>
+            <div class="vuln-card__text">Un système legacy ne sait souvent pas où sont ses données personnelles. DORA exige des tests de résilience réguliers — impossibles sur du code non documenté.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INCIDENTS -->
+      <section class="section fade-in">
+        <p class="section__label">Incidents documentés</p>
+        <h2 class="section__title">Les faits marquants</h2>
+
+        <div class="mt-md">
+          <div class="incident">
+            <div class="incident__header">
+              <span class="incident__name">Bangladesh Bank</span>
+              <span class="tag tag--danger">2016</span>
+              <span class="tag tag--warning">81 M$ volés</span>
+            </div>
+            <p class="incident__body">
+              Via le réseau SWIFT, des attaquants ont émis 35 ordres de virement frauduleux vers des comptes aux Philippines.
+            </p>
+            <div class="incident__cause">
+              <strong>Cause legacy :</strong> Terminal SWIFT connecté via switch à 10$ sans firewall, système non mis à jour, absence de monitoring.
+              <em>Source : BAE Systems Threat Intelligence Report, 2016</em>
+            </div>
+          </div>
+
+          <div class="incident">
+            <div class="incident__header">
+              <span class="incident__name">TSB Bank</span>
+              <span class="tag tag--danger">2018</span>
+              <span class="tag tag--warning">330 M£ de pertes</span>
+            </div>
+            <p class="incident__body">
+              Migration d'un système legacy Lloyds vers Sabadell. 1,9 million de clients bloqués, données bancaires croisées entre comptes. PDG démissionne.
+            </p>
+            <div class="incident__cause">
+              <strong>Cause legacy :</strong> Système source non documenté, dépendances cachées, absence de tests de régression exhaustifs.
+              <em>Source : Financial Conduct Authority UK, rapport 2019</em>
+            </div>
+          </div>
+
+          <div class="incident">
+            <div class="incident__header">
+              <span class="incident__name">RBS / NatWest</span>
+              <span class="tag tag--danger">2012</span>
+              <span class="tag tag--warning">175 M£ d'amende</span>
+            </div>
+            <p class="incident__body">
+              Mise à jour d'un composant CA7 (planificateur des années 1980). Le batch de nuit ne s'exécute pas. 6,5 millions de clients sans accès pendant 6 jours.
+            </p>
+            <div class="incident__cause">
+              <strong>Cause legacy :</strong> Composant vieux de 30 ans, sans documentation, sans environnement de test isolé.
+              <em>Source : Financial Services Authority UK, rapport 2012</em>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STRATÉGIES -->
+      <section class="section fade-in">
+        <p class="section__label">Réponses du secteur</p>
+        <h2 class="section__title">Comment les banques modernisent</h2>
+
+        <div class="strategy-grid mt-md">
+          <div class="strategy-card">
+            <div class="strategy-card__badge">Approche 1</div>
+            <div class="strategy-card__title">Big Bang</div>
+            <div class="strategy-card__text">Remplacement total d'un coup. Rapide sur le papier, catastrophique en pratique. C'est l'approche de TSB Bank en 2018. Rarement choisi aujourd'hui.</div>
+          </div>
+          <div class="strategy-card strategy-card--featured">
+            <div class="strategy-card__badge">Approche privilégiée</div>
+            <div class="strategy-card__title">Strangler Fig Pattern</div>
+            <div class="strategy-card__text">Remplacement progressif module par module. L'ancien système continue pendant que le nouveau l'« étrangle ». Risque minimal, continuité de service. C'est l'approche des ESN spécialisées comme MTB111.</div>
+          </div>
+          <div class="strategy-card">
+            <div class="strategy-card__badge">Approche 3</div>
+            <div class="strategy-card__title">Encapsulation hybride</div>
+            <div class="strategy-card__text">Le legacy est enveloppé dans des API REST modernes. Les systèmes existants tournent mais sont exposés via une couche moderne. Utilisé quand aucun arrêt n'est possible.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DORA -->
+      <section class="section fade-in">
+        <p class="section__label">Réglementation</p>
+        <h2 class="section__title">DORA — Ce que ça impose concrètement</h2>
+        <p>
+          Le <strong>Règlement DORA (UE 2022/2554)</strong>, en vigueur depuis le <strong>17 janvier 2025</strong>,
+          s'applique à toutes les entités financières de l'UE et à leurs prestataires technologiques.
+        </p>
+
+        <div class="table-wrap mt-lg">
+          <table>
+            <thead>
+              <tr>
+                <th>Obligation</th>
+                <th>Ce que ça impose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Gestion des risques ICT (Art. 5-16)</td>
+                <td>Cartographier tous les systèmes — y compris legacy — et identifier les vulnérabilités. Impossible sans documentation.</td>
+              </tr>
+              <tr>
+                <td>Tests de résilience (Art. 24-27)</td>
+                <td>Tests de pénétration annuels sur les systèmes critiques. Nécessite des logs structurés exploitables.</td>
+              </tr>
+              <tr>
+                <td>Gestion des tiers (Art. 28-44)</td>
+                <td>Les ESN prestataires sont des « tiers ICT critiques » soumis aux audits des institutions financières clientes.</td>
+              </tr>
+              <tr>
+                <td>Reporting d'incidents (Art. 17-23)</td>
+                <td>Tout incident majeur déclaré à l'ACPR/BCE sous <strong>4 heures</strong>. Nécessite une supervision en temps réel.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SOURCES -->
+      <section class="section fade-in">
+        <p class="section__label">Dispositif de veille</p>
+        <h2 class="section__title">Mes sources et mon dispositif</h2>
+
+        <div class="sources-grid mt-md">
+          <div class="source-item">
+            <span class="source-item__type">Officiel FR</span>
+            <div>
+              <div class="source-item__name">ANSSI</div>
+              <a href="https://www.ssi.gouv.fr" target="_blank" rel="noopener noreferrer" class="source-item__url">ssi.gouv.fr</a>
+            </div>
+          </div>
+          <div class="source-item">
+            <span class="source-item__type">Règlement</span>
+            <div>
+              <div class="source-item__name">Texte DORA officiel</div>
+              <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2554" target="_blank" rel="noopener noreferrer" class="source-item__url">eur-lex.europa.eu</a>
+            </div>
+          </div>
+          <div class="source-item">
+            <span class="source-item__type">Technique</span>
+            <div>
+              <div class="source-item__name">OWASP Top 10</div>
+              <a href="https://owasp.org/Top10" target="_blank" rel="noopener noreferrer" class="source-item__url">owasp.org/Top10</a>
+            </div>
+          </div>
+          <div class="source-item">
+            <span class="source-item__type">CVE</span>
+            <div>
+              <div class="source-item__name">NIST NVD</div>
+              <a href="https://nvd.nist.gov" target="_blank" rel="noopener noreferrer" class="source-item__url">nvd.nist.gov</a>
+            </div>
+          </div>
+          <div class="source-item">
+            <span class="source-item__type">Actualité IT</span>
+            <div>
+              <div class="source-item__name">LeMagIT</div>
+              <a href="https://www.lemagit.fr" target="_blank" rel="noopener noreferrer" class="source-item__url">lemagit.fr</a>
+            </div>
+          </div>
+          <div class="source-item">
+            <span class="source-item__type">Réglementaire</span>
+            <div>
+              <div class="source-item__name">ACPR — Banque de France</div>
+              <a href="https://acpr.banque-france.fr" target="_blank" rel="noopener noreferrer" class="source-item__url">acpr.banque-france.fr</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2 mt-xl">
+          <div class="card">
+            <h4>Outils &amp; fréquence</h4>
+            <p class="mt-sm" style="font-size:0.85rem;">Google Alerts sur <code>legacy banking security</code>, <code>DORA compliance</code>, <code>CVE Java Spring</code>. Flux RSS CERT-FR. LinkedIn. Lecture quotidienne — synthèse hebdomadaire.</p>
+          </div>
+          <div class="card">
+            <h4>Pratique CTF</h4>
+            <p class="mt-sm" style="font-size:0.85rem;">HackTheBox, TryHackMe, RootMe. Comprendre comment exploiter une faille, c'est comprendre pourquoi un système legacy non patché est une cible facile.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- LIEN ALTERNANCE -->
+      <section class="section fade-in">
+        <p class="section__label">Lien avec mon alternance</p>
+        <h2 class="section__title">Pourquoi ce sujet, pourquoi maintenant</h2>
+        <p>
+          MTB111 by Creative développe <strong>Structur'All</strong>, une plateforme labellisée FinTech qui permet aux institutions
+          financières de modéliser et faire évoluer leurs processus métier sans réécrire leur SI de zéro.
+          C'est, dans sa philosophie, une réponse directe au problème legacy — moderniser progressivement, sans tout jeter.
+        </p>
+        <p class="mt-md">
+          Mon rôle en R&amp;D est technique et interne — refactoring Java, remplacement de composants obsolètes,
+          développement d'utilitaires de contrôle qualité. Ce n'est pas de la sécurité au sens strict.
+          Mais travailler sur du code legacy bancaire m'a rendu cette veille concrète : comprendre pourquoi un log
+          non structuré est un risque d'auditabilité, ou pourquoi DORA impose une traçabilité totale, ça prend un sens
+          différent quand tu viens de passer des semaines à rendre du code legacy <em>auditable</em>.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__copy">© <span class="js-year"></span> Victor Issad. Tous droits réservés.</span>
+        <span class="footer__sub">Étudiant en BTS SIO SLAM · 3IFA Alençon · Session 2026</span>
+      </div>
+      <div class="footer__downloads">
+        <a href="../ressources/CV_Victor_ISSAD.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Mon CV
+        </a>
+        <a href="../ressources/Tableau_Synthese_E4.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Tableau de synthèse E4
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
