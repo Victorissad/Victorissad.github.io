@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu à problèmes — Java / Spring Boot · Victor Issad</title>
+  <meta name="description" content="Application de challenge de programmation en Java/Spring Boot — éditeur en ligne, juge automatique, 4 rôles distincts. Projet scolaire ADP, équipe de 3.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">VictorIssad</a>
+      <div class="nav__links" id="nav-links">
+        <a href="../index.html" class="nav__link">Accueil</a>
+        <a href="about.html" class="nav__link">À propos</a>
+        <a href="competences.html" class="nav__link">Compétences</a>
+        <a href="certifications.html" class="nav__link">Certifications</a>
+        <a href="projets.html" class="nav__link nav__link--active">Projets</a>
+        <a href="veille.html" class="nav__link">Veille</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__theme-btn js-theme-toggle" aria-label="Changer le thème">
+          <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav__burger js-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <section class="project-detail fade-in" style="border-top:none">
+        <a href="projets.html" class="project-detail__back">← Retour aux projets</a>
+
+        <img src="../ressources/img/jeu_problemes_cover_v3.svg" alt="Jeu à problèmes — Java Spring Boot"
+             style="max-width:100%;max-height:200px;display:block;margin-bottom:2rem;border-radius:12px;background:#4a5568;object-fit:contain;padding:0">
+
+        <h2 class="project-detail__title">Jeu à problèmes — Java / Spring Boot</h2>
+        <p class="project-detail__subtitle">ADP · BTS SIO SLAM · Équipe de 3 · 10/2024 → 06/2025</p>
+        <p class="project-detail__intro">
+          Application de challenge de programmation développée en équipe de 3 sur une année scolaire complète
+          dans le cadre du projet ADP (Atelier de Développement de Projet) du BTS SIO SLAM.
+          Les utilisateurs résolvent des problèmes de code dans un éditeur en ligne, contre la montre.
+          Un juge valide chaque solution soumise. Système de points, classement dynamique et historique des parties.
+          4 rôles distincts : <strong>Joueur</strong>, <strong>Créateur</strong>, <strong>Juge</strong> et <strong>Administrateur</strong>.
+        </p>
+
+        <div class="fact-strip">
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Cadre</div>
+            <div class="fact-strip__value">ADP · BTS SIO SLAM</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Stack</div>
+            <div class="fact-strip__value">Java · Spring Boot · Oracle DB · JavaFX</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Équipe</div>
+            <div class="fact-strip__value">3 personnes</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Période</div>
+            <div class="fact-strip__value">10/2024 → 06/2025</div>
+          </div>
+        </div>
+
+        <div class="tech-badges">
+          <span class="tech-badge"><img src="../assets/img/icons/java.svg" alt="" onerror="this.style.display='none'">Java</span>
+          <span class="tech-badge"><img src="../assets/img/icons/spring.svg" alt="" onerror="this.style.display='none'">Spring Boot</span>
+          <span class="tech-badge">Oracle DB</span>
+          <span class="tech-badge">JavaFX</span>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Concept</span>
+          <h3 class="project-section__title">Principe de l'application</h3>
+          <p>
+            Le jeu à problèmes est une plateforme de challenge de code inspirée des concours de programmation
+            compétitive (type Advent of Code, Codingame). L'utilisateur se connecte, choisit un problème
+            proposé par un Créateur, le résout dans un éditeur de code intégré, et soumet sa solution
+            avant la fin du chronomètre.
+          </p>
+          <p>
+            Un <strong>Juge</strong> (utilisateur ayant ce rôle) valide manuellement les soumissions et attribue les points.
+            Le <strong>Classement</strong> est mis à jour en temps réel. Chaque joueur peut consulter son
+            <strong>historique de parties</strong> et ses performances.
+          </p>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Rôles utilisateurs</span>
+          <h3 class="project-section__title">4 rôles distincts</h3>
+          <div class="subproj-grid">
+            <div class="subproj-card">
+              <div class="subproj-card__label">Rôle 1</div>
+              <h3 class="subproj-card__title">Joueur</h3>
+              <div class="subproj-card__role">Participant</div>
+              <p class="subproj-card__desc">Accède aux problèmes disponibles, résout dans l'éditeur en ligne, soumet ses solutions et consulte son classement et historique.</p>
+            </div>
+            <div class="subproj-card">
+              <div class="subproj-card__label">Rôle 2</div>
+              <h3 class="subproj-card__title">Créateur</h3>
+              <div class="subproj-card__role">Concepteur de défis</div>
+              <p class="subproj-card__desc">Rédige et publie des problèmes de programmation : énoncé, contraintes, exemples d'entrée/sortie attendus, difficulté.</p>
+            </div>
+            <div class="subproj-card">
+              <div class="subproj-card__label">Rôle 3</div>
+              <h3 class="subproj-card__title">Juge</h3>
+              <div class="subproj-card__role">Validateur</div>
+              <p class="subproj-card__desc">Évalue les soumissions des joueurs, valide ou rejette les solutions avec commentaires, et attribue les points.</p>
+            </div>
+            <div class="subproj-card">
+              <div class="subproj-card__label">Rôle 4</div>
+              <h3 class="subproj-card__title">Administrateur</h3>
+              <div class="subproj-card__role">Gestion de la plateforme</div>
+              <p class="subproj-card__desc">Gère les comptes utilisateurs, les droits d'accès, les problèmes et peut superviser l'ensemble des parties en cours.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Stack technique</span>
+          <h3 class="project-section__title">Architecture et technologies</h3>
+          <table class="stack-table">
+            <tr><td>Backend</td><td>Java · Spring Boot — API REST, logique métier, gestion des rôles</td></tr>
+            <tr><td>Frontend</td><td>JavaFX — interface graphique desktop avec éditeur de code intégré</td></tr>
+            <tr><td>Base de données</td><td>Oracle DB — stockage des utilisateurs, problèmes, soumissions, scores, historique</td></tr>
+            <tr><td>Organisation</td><td>Équipe de 3 · répartition par composants · versioning Git</td></tr>
+            <tr><td>Durée</td><td>Année scolaire complète (10/2024 → 06/2025)</td></tr>
+          </table>
+        </div>
+
+        <div class="e4-block">
+          <div class="e4-block__title">Liens avec le tableau de synthèse E4</div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">B1</span>
+            <div>
+              <div class="e4-row__skill">Gérer le patrimoine informatique</div>
+              <div class="e4-row__sub">Mettre en place et vérifier les niveaux d'habilitation associés à un service</div>
+            </div>
+            <div class="e4-row__just">Implémentation d'un système de gestion des rôles à 4 niveaux (Joueur, Créateur, Juge, Administrateur) avec contrôle d'accès aux fonctionnalités selon le rôle attribué.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">B4</span>
+            <div>
+              <div class="e4-row__skill">Travailler en mode projet</div>
+              <div class="e4-row__sub">Analyser les objectifs et les modalités d'organisation d'un projet</div>
+            </div>
+            <div class="e4-row__just">Projet conduit en équipe de 3 sur une année scolaire complète — répartition des tâches, coordination, gestion des itérations et des dépendances entre composants (backend, frontend, base de données).</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">B5</span>
+            <div>
+              <div class="e4-row__skill">Mettre à disposition un service informatique</div>
+              <div class="e4-row__sub">Déployer un service</div>
+            </div>
+            <div class="e4-row__just">Livraison d'une application fonctionnelle complète avec backend Spring Boot, interface JavaFX et base Oracle DB — intégration des composants, tests et mise à disposition du service.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__copy">© <span class="js-year"></span> Victor Issad. Tous droits réservés.</span>
+        <span class="footer__sub">Étudiant en BTS SIO SLAM · 3IFA Alençon · Session 2026</span>
+      </div>
+      <div class="footer__downloads">
+        <a href="../ressources/CV_Victor_ISSAD.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Mon CV
+        </a>
+        <a href="../ressources/Tableau_Synthese_E4.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Tableau de synthèse E4
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

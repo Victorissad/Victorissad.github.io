@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YesWeHack — Bug bounty · Victor Issad</title>
+  <meta name="description" content="Mission de bug bounty sur la plateforme YesWeHack — tests de vulnérabilités sur des cibles réelles, rédaction de rapports formels, signalement responsable.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">VictorIssad</a>
+      <div class="nav__links" id="nav-links">
+        <a href="../index.html" class="nav__link">Accueil</a>
+        <a href="about.html" class="nav__link">À propos</a>
+        <a href="competences.html" class="nav__link">Compétences</a>
+        <a href="certifications.html" class="nav__link">Certifications</a>
+        <a href="projets.html" class="nav__link nav__link--active">Projets</a>
+        <a href="veille.html" class="nav__link">Veille</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__theme-btn js-theme-toggle" aria-label="Changer le thème">
+          <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav__burger js-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <section class="project-detail fade-in" style="border-top:none">
+        <a href="projets.html" class="project-detail__back">← Retour aux projets</a>
+
+        <img src="../ressources/img/YesWeHack_logo.png" alt="YesWeHack — Bug bounty"
+             style="max-width:260px;display:block;margin-bottom:2rem;background:#0f1117;padding:20px 32px;border-radius:12px;object-fit:contain">
+
+        <h2 class="project-detail__title">YesWeHack — Bug bounty</h2>
+        <p class="project-detail__subtitle">Cybersécurité · MTB111 by Creative · 12/2024 → 03/2025</p>
+        <p class="project-detail__intro">
+          Mission de bug bounty conduite sur la plateforme <strong>YesWeHack</strong> dans le cadre du pôle
+          cybersécurité de MTB111 by Creative. Les cibles incluaient des plateformes réelles (type Deezer).
+          L'objectif : identifier des vulnérabilités exploitables, les reproduire, les documenter et les
+          signaler de façon responsable aux équipes sécurité des éditeurs concernés.
+        </p>
+
+        <div class="fact-strip">
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Plateforme</div>
+            <div class="fact-strip__value">YesWeHack</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Entreprise</div>
+            <div class="fact-strip__value">MTB111 by Creative</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Période</div>
+            <div class="fact-strip__value">12/2024 → 03/2025</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Type</div>
+            <div class="fact-strip__value">Bug bounty</div>
+          </div>
+        </div>
+
+        <div class="tech-badges">
+          <span class="tech-badge"><img src="../assets/img/icons/burpsuite.svg" alt="" onerror="this.style.display='none'">Burp Suite</span>
+          <span class="tech-badge">YesWeHack</span>
+          <span class="tech-badge">Navigateur</span>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Contexte</span>
+          <h3 class="project-section__title">Bug bounty et divulgation responsable</h3>
+          <p>
+            Le bug bounty est un programme par lequel des entreprises invitent des chercheurs en sécurité
+            à tester leurs systèmes en échange d'une récompense en cas de découverte valide.
+            <strong>YesWeHack</strong> est la principale plateforme européenne de bug bounty,
+            référençant des dizaines de programmes ouverts de grandes organisations publiques et privées.
+          </p>
+          <p>
+            Dans ce cadre, j'ai travaillé sur des cibles réelles (type Deezer et autres plateformes grand public),
+            en respectant strictement le périmètre défini par chaque programme (scope) et les règles
+            de divulgation responsable (responsible disclosure).
+          </p>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Vulnérabilités testées</span>
+          <h3 class="project-section__title">Types de tests réalisés</h3>
+          <ul class="proj-list">
+            <li><strong>Injections SQL</strong> — tentatives d'injection sur les formulaires et paramètres d'URL</li>
+            <li><strong>XSS (Cross-Site Scripting)</strong> — tests d'injection de scripts dans les champs réfléchis et persistants</li>
+            <li><strong>Contrôles d'accès défaillants</strong> — vérification de l'autorisation sur les ressources protégées (IDOR, escalade de privilèges)</li>
+            <li><strong>Exposition de données sensibles</strong> — analyse des réponses API, headers HTTP, et endpoints non sécurisés</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Livrables</span>
+          <h3 class="project-section__title">Rédaction de rapports de vulnérabilités</h3>
+          <p>
+            Pour chaque vulnérabilité identifiée, rédaction d'un rapport formel structuré comprenant :
+          </p>
+          <ul class="proj-list">
+            <li>Description précise de la vulnérabilité et de son impact</li>
+            <li>Étapes de reproduction détaillées (proof of concept)</li>
+            <li>Capture d'écran ou payload de démonstration</li>
+            <li>Niveau de criticité estimé (selon CVSS)</li>
+            <li>Recommandations de remédiation</li>
+          </ul>
+          <p>
+            Les rapports ont été soumis directement aux équipes sécurité des éditeurs via la plateforme YesWeHack,
+            dans le respect des délais et des règles de chaque programme.
+          </p>
+        </div>
+
+        <div class="e4-block">
+          <div class="e4-block__title">Liens avec le tableau de synthèse E4</div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">B1</span>
+            <div>
+              <div class="e4-row__skill">Gérer le patrimoine informatique</div>
+              <div class="e4-row__sub">Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</div>
+            </div>
+            <div class="e4-row__just">Application des méthodologies OWASP et CVSS pour qualifier les vulnérabilités trouvées, en lien avec les standards de sécurité reconnus dans le secteur.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">B2</span>
+            <div>
+              <div class="e4-row__skill">Répondre aux incidents et aux demandes d'assistance</div>
+              <div class="e4-row__sub">Traiter des demandes concernant les applications</div>
+            </div>
+            <div class="e4-row__just">Identification, analyse et signalement structuré de vulnérabilités sur des plateformes réelles — démarche directement assimilable à la gestion d'incidents de sécurité.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">B6</span>
+            <div>
+              <div class="e4-row__skill">Développement professionnel</div>
+              <div class="e4-row__sub">Mettre en place son environnement d'apprentissage personnel</div>
+            </div>
+            <div class="e4-row__just">Pratique autonome de la recherche de vulnérabilités sur des cibles réelles dans un cadre légal et éthique, renforçant les compétences en sécurité offensive applicative.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__copy">© <span class="js-year"></span> Victor Issad. Tous droits réservés.</span>
+        <span class="footer__sub">Étudiant en BTS SIO SLAM · 3IFA Alençon · Session 2026</span>
+      </div>
+      <div class="footer__downloads">
+        <a href="../ressources/CV_Victor_ISSAD.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Mon CV
+        </a>
+        <a href="../ressources/Tableau_Synthese_E4.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Tableau de synthèse E4
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

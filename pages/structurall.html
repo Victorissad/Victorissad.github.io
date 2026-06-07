@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Structur'All — Victor Issad</title>
+  <meta name="description" content="Refactoring du système de logging SAXLogger de Structur'All, plateforme FinTech MTB111 by Creative. Détails techniques et liens E4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">VictorIssad</a>
+      <div class="nav__links" id="nav-links">
+        <a href="../index.html" class="nav__link">Accueil</a>
+        <a href="about.html" class="nav__link">À propos</a>
+        <a href="competences.html" class="nav__link">Compétences</a>
+        <a href="certifications.html" class="nav__link">Certifications</a>
+        <a href="projets.html" class="nav__link nav__link--active">Projets</a>
+        <a href="veille.html" class="nav__link">Veille</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__theme-btn js-theme-toggle" aria-label="Changer le thème">
+          <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav__burger js-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <section class="project-detail fade-in" style="border-top:none">
+        <a href="projets.html" class="project-detail__back">← Retour aux projets</a>
+        <h2 class="project-detail__title">Structur'All — SAXLogger Refactoring</h2>
+        <p class="project-detail__subtitle">Alternance · MTB111 by Creative · Septembre 2024 → en cours</p>
+        <p class="project-detail__intro">
+          <strong>Structur'All Machine®</strong> est la plateforme principale de MTB111 by Creative — une solution
+          labellisée FinTech par Finance Innovation, utilisée par des institutions financières
+          (BNP Paribas, Allianz, Banque de France) pour modéliser visuellement leurs processus métier sans
+          réécrire leur SI. Ma mission : R&amp;D sur la maintenance et l'amélioration de ce produit, en particulier
+          le remplacement systématique d'un système de logging vétuste basé sur <code>System.err</code>.
+        </p>
+
+        <div class="fact-strip">
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Cadre</div>
+            <div class="fact-strip__value">R&amp;D Alternance · BTS SIO</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Stack</div>
+            <div class="fact-strip__value">Java · Spring Boot · Maven</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Modules</div>
+            <div class="fact-strip__value">4 modules SAX</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Fichiers traités</div>
+            <div class="fact-strip__value">Plusieurs centaines</div>
+          </div>
+        </div>
+
+        <div class="tech-badges">
+          <span class="tech-badge"><img src="../assets/img/icons/java.svg" alt="">Java</span>
+          <span class="tech-badge"><img src="../assets/img/icons/spring.svg" alt="">Spring Boot</span>
+          <span class="tech-badge"><img src="../assets/img/icons/maven.svg" alt="">Maven</span>
+          <span class="tech-badge"><img src="../assets/img/icons/gitlab.svg" alt="">GitLab</span>
+          <span class="tech-badge"><img src="../assets/img/icons/powershell.svg" alt="">PowerShell</span>
+          <span class="tech-badge"><img src="../assets/img/icons/intellij.svg" alt="">IntelliJ IDEA</span>
+        </div>
+
+        <div class="subproj-grid">
+          <div class="subproj-card">
+            <div class="subproj-card__label">Mission principale</div>
+            <h3 class="subproj-card__title">SAXLogger</h3>
+            <div class="subproj-card__role">Remplacement de System.err</div>
+            <p class="subproj-card__desc">Refactoring sur 4 modules : sax-core, sax-languages, sax-actions, sax-databases. Plusieurs centaines de fichiers Java traités.</p>
+          </div>
+          <div class="subproj-card">
+            <div class="subproj-card__label">Utilitaire 1</div>
+            <h3 class="subproj-card__title">LoggerChecker</h3>
+            <div class="subproj-card__role">Validation de conformité</div>
+            <p class="subproj-card__desc">Outil Java développé pour scanner les fichiers du projet et vérifier qu'aucun System.err résiduel n'est présent.</p>
+          </div>
+          <div class="subproj-card">
+            <div class="subproj-card__label">Utilitaire 2</div>
+            <h3 class="subproj-card__title">ClassOriginFinder</h3>
+            <div class="subproj-card__role">Analyse Reflection API</div>
+            <p class="subproj-card__desc">Outil d'analyse des génériques Java par Reflection. Trace l'origine des classes dans la hiérarchie de types pour faciliter le débogage.</p>
+          </div>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Mission · SAXLogger</span>
+          <h3 class="project-section__title">Refactoring du logging legacy</h3>
+
+          <h4 class="mt-lg">Contexte</h4>
+          <p>
+            Avant mon arrivée, l'ensemble des sorties de log de Structur'All transitait par <code>System.err</code> et
+            <code>System.out</code> — des appels statiques non catégorisés, sans horodatage,
+            sans niveau de criticité. Cette dette technique rendait l'application impossible à monitorer en
+            production et bloquait toute mise en conformité avec les exigences d'auditabilité du secteur bancaire.
+          </p>
+
+          <h4 class="mt-lg">Stack technique</h4>
+          <table class="stack-table">
+            <tr><td>Langage</td><td>Java</td></tr>
+            <tr><td>Framework</td><td>Spring Boot</td></tr>
+            <tr><td>Build</td><td>Maven</td></tr>
+            <tr><td>Logger cible</td><td>SAXLogger (logger interne MTB111)</td></tr>
+            <tr><td>Versioning</td><td>Git / GitLab — code review avec Axel Gaillard</td></tr>
+            <tr><td>Automatisation</td><td>Scripts PowerShell de remplacement en masse</td></tr>
+          </table>
+
+          <h4 class="mt-lg">Interventions réalisées</h4>
+          <ul class="proj-list">
+            <li><strong>Analyse préalable</strong> — recensement des occurrences de System.err / System.out sur 4 modules (sax-core, sax-languages, sax-actions, sax-databases)</li>
+            <li><strong>Scripts d'automatisation</strong> — développement de scripts PowerShell de remplacement en masse pour traiter plusieurs centaines de fichiers</li>
+            <li><strong>Correction d'encodage</strong> — résolution des problèmes de BOM (Byte Order Mark) UTF-8 sur les fichiers source affectés par le refactoring</li>
+            <li><strong>Code review GitLab</strong> — itérations multiples avec Axel Gaillard, plus de 18 commentaires de review résolus</li>
+            <li><strong>Validation manuelle</strong> — relecture des cas particuliers non automatisables, conservation des contextes spécifiques de logging</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Utilitaire interne</span>
+          <h3 class="project-section__title">LoggerChecker — Vérification de conformité</h3>
+
+          <h4 class="mt-lg">Objectif</h4>
+          <p>
+            Garantir qu'aucun <code>System.err</code> ni <code>System.out</code> ne soit réintroduit
+            dans le code après le refactoring. Outil destiné à être utilisé en pré-commit ou en CI.
+          </p>
+
+          <h4 class="mt-lg">Fonctionnalités</h4>
+          <ul class="proj-list">
+            <li>Scan récursif d'un dossier source Java</li>
+            <li>Détection des appels interdits (System.err, System.out, e.printStackTrace())</li>
+            <li>Rapport synthétique : fichier, ligne, type d'occurrence</li>
+            <li>Sortie console formatée pour intégration éventuelle dans un pipeline CI</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Utilitaire interne</span>
+          <h3 class="project-section__title">ClassOriginFinder — Analyse Reflection</h3>
+
+          <h4 class="mt-lg">Objectif</h4>
+          <p>
+            Faciliter le débogage de Structur'All en identifiant l'origine exacte des classes Java
+            dans la hiérarchie de types — particulièrement utile pour traiter les génériques complexes
+            issus de l'API Reflection.
+          </p>
+
+          <h4 class="mt-lg">Stack technique</h4>
+          <table class="stack-table">
+            <tr><td>Langage</td><td>Java 17</td></tr>
+            <tr><td>API utilisée</td><td>Java Reflection API</td></tr>
+            <tr><td>Cas d'usage</td><td>Identification de la source d'une classe générique dans une hiérarchie complexe</td></tr>
+          </table>
+        </div>
+
+        <div class="e4-block">
+          <div class="e4-block__title">Liens avec le tableau de synthèse E4</div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C1</span>
+            <div>
+              <div class="e4-row__skill">Gérer le patrimoine informatique</div>
+              <div class="e4-row__sub">Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</div>
+            </div>
+            <div class="e4-row__just">Le refactoring s'inscrit dans une démarche de mise en conformité avec les standards de logging professionnels (horodatage, niveaux de criticité, format structuré) attendus dans le secteur bancaire et exigés par la réglementation DORA.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C1</span>
+            <div>
+              <div class="e4-row__skill">Gérer le patrimoine informatique</div>
+              <div class="e4-row__sub">Vérifier les conditions de la continuité d'un service informatique</div>
+            </div>
+            <div class="e4-row__just">Le système de logging structuré est une condition technique préalable à toute supervision en production. Sans logs exploitables, aucune détection d'incident ni aucun audit n'est possible.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C2</span>
+            <div>
+              <div class="e4-row__skill">Répondre aux incidents et demandes</div>
+              <div class="e4-row__sub">Traiter des demandes concernant les applications</div>
+            </div>
+            <div class="e4-row__just">Le besoin a été formulé par l'équipe interne MTB111 comme une demande d'évolution technique. J'ai pris en charge l'analyse, la conception de la solution (scripts d'automatisation) et la livraison sous validation par code review.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C4</span>
+            <div>
+              <div class="e4-row__skill">Travailler en mode projet</div>
+              <div class="e4-row__sub">Mettre en place des outils de gestion de projet</div>
+            </div>
+            <div class="e4-row__just">Utilisation quotidienne de GitLab pour le versioning, les merge requests, les revues de code (18+ commentaires résolus avec Axel Gaillard) et le suivi des itérations sur la durée du refactoring.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C4</span>
+            <div>
+              <div class="e4-row__skill">Travailler en mode projet</div>
+              <div class="e4-row__sub">Analyser les objectifs et les modalités d'organisation d'un projet</div>
+            </div>
+            <div class="e4-row__just">Phase préalable d'analyse : recensement des occurrences sur 4 modules, identification des cas automatisables vs manuels, planification des itérations module par module.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C5</span>
+            <div>
+              <div class="e4-row__skill">Mettre à disposition un service informatique</div>
+              <div class="e4-row__sub">Déployer un service</div>
+            </div>
+            <div class="e4-row__just">Les utilitaires LoggerChecker et ClassOriginFinder ont été livrés à l'équipe MTB111 sous forme d'outils Java exécutables, accompagnés de leur documentation d'utilisation.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C5</span>
+            <div>
+              <div class="e4-row__skill">Mettre à disposition un service informatique</div>
+              <div class="e4-row__sub">Réaliser les tests d'intégration et d'acceptation d'un service</div>
+            </div>
+            <div class="e4-row__just">Validation systématique du refactoring par exécution des tests existants après chaque module traité, contrôle de non-régression et relecture humaine des changements automatisés.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__copy">© <span class="js-year"></span> Victor Issad. Tous droits réservés.</span>
+        <span class="footer__sub">Étudiant en BTS SIO SLAM · 3IFA Alençon · Session 2026</span>
+      </div>
+      <div class="footer__downloads">
+        <a href="../ressources/CV_Victor_ISSAD.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Mon CV
+        </a>
+        <a href="../ressources/Tableau_Synthese_E4.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Tableau de synthèse E4
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

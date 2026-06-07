@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victor Issad — Portfolio BTS SIO SLAM</title>
+  <meta name="description" content="Portfolio de Victor Issad, étudiant en BTS SIO SLAM en alternance chez MTB111 by Creative. Développeur Java, Spring Boot, Android, Laravel.">
+  <meta property="og:title" content="Victor Issad — Portfolio BTS SIO SLAM">
+  <meta property="og:description" content="Portfolio de Victor Issad, étudiant en BTS SIO SLAM, alternance chez MTB111 by Creative.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">VictorIssad</a>
+      <div class="nav__links" id="nav-links">
+        <a href="index.html" class="nav__link nav__link--active">Accueil</a>
+        <a href="pages/about.html" class="nav__link">À propos</a>
+        <a href="pages/competences.html" class="nav__link">Compétences</a>
+        <a href="pages/certifications.html" class="nav__link">Certifications</a>
+        <a href="pages/projets.html" class="nav__link">Projets</a>
+        <a href="pages/veille.html" class="nav__link">Veille</a>
+        <a href="pages/contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__theme-btn js-theme-toggle" aria-label="Changer le thème">
+          <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav__burger js-burger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+
+      <!-- HERO -->
+      <section class="hero">
+        <img src="assets/img/photo.png" alt="Photo de Victor Issad" class="hero__photo">
+        <h1 class="hero__name">Victor Issad</h1>
+        <p class="hero__tagline">Étudiant en BTS SIO SLAM</p>
+        <p class="hero__bio">
+          Passionné par le développement logiciel et la modernisation de systèmes legacy, je me forme activement
+          pour devenir un développeur full-stack autonome. Actuellement en alternance chez
+          <strong>MTB111 by Creative</strong> sur le projet <strong>Structur'All</strong>.
+        </p>
+        <div class="hero__cta">
+          <a href="pages/projets.html" class="btn btn--primary">Voir mes projets</a>
+          <a href="pages/about.html" class="btn btn--secondary">À propos</a>
+        </div>
+        <div class="hero__socials">
+          <a href="https://github.com/Victorissad" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/victor-issad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__copy">© <span class="js-year"></span> Victor Issad. Tous droits réservés.</span>
+        <span class="footer__sub">Étudiant en BTS SIO SLAM · 3IFA Alençon · Session 2026</span>
+      </div>
+      <div class="footer__downloads">
+        <a href="ressources/CV_Victor_ISSAD.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Mon CV
+        </a>
+        <a href="ressources/Tableau_Synthese_E4.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Tableau de synthèse E4
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille technologique — Victor Issad</title>
+  <meta name="description" content="Veille technologique — Sécurité des systèmes legacy dans le secteur bancaire. DORA, COBOL, incidents documentés. Victor Issad, BTS SIO SLAM 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    /* ---- VEILLE PAGE ---- */
+
+    .veille-hero {
+      padding: 64px 0 52px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .veille-hero__label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .veille-hero__label::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 99px;
+    }
+    .veille-hero__title {
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 750;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      color: var(--text);
+      max-width: 740px;
+      margin-bottom: 24px;
+    }
+    .veille-hero__accroche {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 620px;
+      line-height: 1.8;
+      padding: 14px 20px;
+      border-left: 3px solid var(--accent);
+      background: var(--accent-tint);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-style: italic;
+    }
+
+    /* Stats band */
+    .stats-band {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 44px 0 0;
+      background: var(--bg-card);
+    }
+    .stats-band__item {
+      padding: 28px 24px;
+      border-right: 1px solid var(--border);
+      transition: background var(--t);
+    }
+    .stats-band__item:last-child { border-right: none; }
+    .stats-band__item:hover { background: var(--bg-soft); }
+    .stats-band__num {
+      font-family: var(--font-mono);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .stats-band__lbl {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+    .stats-band__src {
+      font-size: 0.67rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    @media (max-width: 780px) {
+      .stats-band { grid-template-columns: repeat(2, 1fr); }
+      .stats-band__item:nth-child(2) { border-right: none; }
+      .stats-band__item:nth-child(1),
+      .stats-band__item:nth-child(2) { border-bottom: 1px solid var(--border); }
+    }
+    @media (max-width: 460px) {
+      .stats-band { grid-template-columns: 1fr; }
+      .stats-band__item { border-right: none !important; border-bottom: 1px solid var(--border); }
+      .stats-band__item:last-child { border-bottom: none; }
+    }
+
+    /* Filter bar */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filter-bar__label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-right: 4px;
+    }
+    .filter-btn {
+      padding: 5px 16px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--t);
+      font-family: var(--font);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .filter-btn::before { content: '●'; font-size: 0.55rem; opacity: 0.5; }
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn.active { color: white; }
+    .filter-btn--tout.active { background: var(--accent); border-color: var(--accent); }
+    .filter-btn--incident { color: var(--danger); border-color: rgba(220,38,38,.3); background: rgba(220,38,38,.04); }
+    .filter-btn--incident::before { color: var(--danger); opacity: 1; }
+    .filter-btn--incident.active { background: var(--danger); border-color: var(--danger); color: white; }
+    .filter-btn--loi { color: #2563eb; border-color: rgba(37,99,235,.3); background: rgba(37,99,235,.04); }
+    .filter-btn--loi::before { color: #2563eb; opacity: 1; }
+    .filter-btn--loi.active { background: #2563eb; border-color: #2563eb; color: white; }
+    .filter-btn--analyse { color: var(--success); border-color: rgba(22,163,74,.3); background: rgba(22,163,74,.04); }
+    .filter-btn--analyse::before { color: var(--success); opacity: 1; }
+    .filter-btn--analyse.active { background: var(--success); border-color: var(--success); color: white; }
+    [data-theme="dark"] .filter-btn--loi { color: #60a5fa; border-color: rgba(96,165,250,.3); background: rgba(96,165,250,.06); }
+    [data-theme="dark"] .filter-btn--analyse { color: #4ade80; border-color: rgba(74,222,128,.3); background: rgba(74,222,128,.06); }
+
+    /* Timeline */
+    .veille-timeline { position: relative; }
+    .veille-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--border);
+      border-radius: 99px;
+    }
+
+    .vt-item {
+      position: relative;
+      padding: 0 0 36px 32px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .vt-item:last-child { padding-bottom: 0; }
+    .vt-item.hidden {
+      display: none;
+    }
+
+    .vt-dot {
+      position: absolute;
+      left: -8px;
+      top: 6px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--border);
+      z-index: 1;
+      transition: all var(--t);
+    }
+    .vt-item[data-tag="incident"] .vt-dot {
+      border-color: var(--danger);
+      background: rgba(220,38,38,.12);
+    }
+    .vt-item[data-tag="loi"] .vt-dot {
+      border-color: #2563eb;
+      background: rgba(37,99,235,.12);
+    }
+    .vt-item[data-tag="analyse"] .vt-dot {
+      border-color: var(--success);
+      background: rgba(22,163,74,.12);
+    }
+    [data-theme="dark"] .vt-item[data-tag="loi"] .vt-dot { background: rgba(96,165,250,.12); }
+    [data-theme="dark"] .vt-item[data-tag="analyse"] .vt-dot { background: rgba(74,222,128,.1); }
+
+    .vt-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      transition: border-color var(--t), box-shadow var(--t);
+      border-left-width: 3px;
+    }
+    .vt-item[data-tag="incident"] .vt-card { border-left-color: var(--danger); }
+    .vt-item[data-tag="loi"] .vt-card { border-left-color: #2563eb; }
+    .vt-item[data-tag="analyse"] .vt-card { border-left-color: var(--success); }
+    .vt-card:hover { box-shadow: var(--shadow); }
+
+    .vt-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .vt-year {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .vt-location {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      padding: 2px 9px;
+      border-radius: 99px;
+    }
+    .vt-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .vt-tag::before { content: '●'; font-size: 0.5rem; }
+    .vt-tag--incident {
+      background: rgba(220,38,38,.1);
+      color: var(--danger);
+      border: 1px solid rgba(220,38,38,.2);
+    }
+    .vt-tag--loi {
+      background: rgba(37,99,235,.1);
+      color: #2563eb;
+      border: 1px solid rgba(37,99,235,.2);
+    }
+    .vt-tag--analyse {
+      background: rgba(22,163,74,.1);
+      color: var(--success);
+      border: 1px solid rgba(22,163,74,.2);
+    }
+    [data-theme="dark"] .vt-tag--loi { color: #60a5fa; background: rgba(96,165,250,.12); border-color: rgba(96,165,250,.25); }
+    [data-theme="dark"] .vt-tag--analyse { color: #4ade80; background: rgba(74,222,128,.1); border-color: rgba(74,222,128,.25); }
+
+    .vt-title {
+      font-size: 1rem;
+      font-weight: 650;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .vt-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+    .vt-source {
+      font-size: 0.73rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    /* Analyse personnelle */
+    .analyse-block {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-top: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .analyse-block::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 28px;
+      font-size: 8rem;
+      line-height: 1;
+      color: var(--accent);
+      font-family: Georgia, serif;
+      opacity: 0.12;
+      pointer-events: none;
+      user-select: none;
+    }
+    .analyse-block__label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .analyse-block__title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 20px;
+      letter-spacing: -0.015em;
+    }
+    .analyse-block__text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+    }
+    .analyse-block__text + .analyse-block__text { margin-top: 14px; }
+    .analyse-block__callout {
+      display: block;
+      margin-top: 24px;
+      padding: 14px 18px;
+      background: var(--accent-tint);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    /* Dispositif de veille */
+    .dispositif-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .dispositif-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: border-color var(--t);
+    }
+    .dispositif-card:hover { border-color: var(--accent); }
+    .dispositif-card__icon {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .dispositif-card__title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .dispositif-card__text {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Sources */
+    .sources-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 24px;
+    }
+    .source-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 11px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color var(--t);
+      text-decoration: none !important;
+    }
+    .source-row:hover { border-color: var(--accent); }
+    .source-row__type {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 9px;
+      border-radius: 99px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      min-width: 76px;
+      text-align: center;
+    }
+    .source-row__name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      flex: 1;
+    }
+    .source-row__url {
+      font-size: 0.73rem;
+      color: var(--accent);
+      font-family: var(--font-mono);
+    }
+    @media (max-width: 560px) {
+      .source-row { flex-wrap: wrap; gap: 8px; }
+      .source-row__url { display: none; }
+    }
+    @media (max-width: 600px) {
+      .analyse-block { padding: 28px 24px; }
+      .veille-hero { padding: 40px 0 36px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">VictorIssad</a>
+      <div class="nav__links" id="nav-links">
+        <a href="../index.html" class="nav__link">Accueil</a>
+        <a href="about.html" class="nav__link">À propos</a>
+        <a href="competences.html" class="nav__link">Compétences</a>
+        <a href="certifications.html" class="nav__link">Certifications</a>
+        <a href="projets.html" class="nav__link">Projets</a>
+        <a href="veille.html" class="nav__link nav__link--active">Veille</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__theme-btn js-theme-toggle" aria-label="Changer le thème">
+          <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav__burger js-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+
+      <!-- HERO -->
+      <div class="veille-hero fade-in">
+        <p class="veille-hero__label">Veille technologique · BTS SIO SLAM 2026</p>
+        <h1 class="veille-hero__title">Sécurité des systèmes legacy dans le secteur bancaire</h1>
+        <p class="veille-hero__accroche">
+          95&nbsp;% des DAB mondiaux tournent sur du code des années 1970.
+          Pendant que les banques innovent en façade, leur cœur névralgique est une cible béante.
+        </p>
+
+        <!-- STATS -->
+        <div class="stats-band">
+          <div class="stats-band__item">
+            <div class="stats-band__num">800 Md</div>
+            <div class="stats-band__lbl">lignes de COBOL actives dans le monde</div>
+            <div class="stats-band__src">Reuters, 2023</div>
+          </div>
+          <div class="stats-band__item">
+            <div class="stats-band__num">68&nbsp;%</div>
+            <div class="stats-band__lbl">des banques EU citent leur legacy comme risque principal</div>
+            <div class="stats-band__src">McKinsey, 2022</div>
+          </div>
+          <div class="stats-band__item">
+            <div class="stats-band__num">4h</div>
+            <div class="stats-band__lbl">délai max DORA pour déclarer un incident majeur</div>
+            <div class="stats-band__src">Règlement UE 2022/2554</div>
+          </div>
+          <div class="stats-band__item">
+            <div class="stats-band__num">60&nbsp;%</div>
+            <div class="stats-band__lbl">des violations bancaires exploitent des systèmes non patchés +12 mois</div>
+            <div class="stats-band__src">Verizon DBIR, 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIMELINE -->
+      <section class="section fade-in">
+        <p class="section__label">Chronologie</p>
+        <h2 class="section__title">2003 → 2026 — Les grandes étapes</h2>
+
+        <!-- Filter bar -->
+        <div class="filter-bar" id="filterBar">
+          <span class="filter-bar__label">Filtrer</span>
+          <button class="filter-btn filter-btn--tout active" data-filter="tout">Tout</button>
+          <button class="filter-btn filter-btn--incident" data-filter="incident">Incident</button>
+          <button class="filter-btn filter-btn--loi" data-filter="loi">Loi</button>
+          <button class="filter-btn filter-btn--analyse" data-filter="analyse">Analyse</button>
+        </div>
+
+        <div class="veille-timeline" id="timeline">
+
+          <!-- 2003 -->
+          <div class="vt-item" data-tag="incident">
+            <div class="vt-dot"></div>
+            <div class="vt-card">
+              <div class="vt-meta">
+                <span class="vt-year">2003</span>
+                <span class="vt-location">USA</span>
+                <span class="vt-tag vt-tag--incident">Incident</span>
+              </div>
+              <div class="vt-title">Ver Slammer — 13&nbsp;000 DAB Bank of America hors service</div>
+              <div class="vt-desc">
+                Faille SQL Server non patchée. En quelques heures, 13&nbsp;000 distributeurs Bank of America tombent.
+                Premier signal d'alarme mondial ignoré. Le ver se propage en 10 minutes à travers le réseau mondial,
+                saturant les liaisons et rendant impossibles toutes les transactions.
+              </div>
+              <div class="vt-source">Source : CERT/CC Advisory CA-2003-04</div>
+            </div>
+          </div>
+
+          <!-- 2008 -->
+          <div class="vt-item" data-tag="analyse">
+            <div class="vt-dot"></div>
+            <div class="vt-card">
+              <div class="vt-meta">
+                <span class="vt-year">2008</span>
+                <span class="vt-location">Mondial</span>
+                <span class="vt-tag vt-tag--analyse">Analyse</span>
+              </div>
+              <div class="vt-title">Crise financière → gel des budgets IT bancaires</div>
+              <div class="vt-desc">
+                Les banques survivent en mode économie. Les projets de modernisation sont repoussés sine die.
+                Le legacy gagne 10 ans de sursis — et autant de dette technique.
+                Ce choix de court terme conditionne encore toute la décennie 2010.
+              </div>
+            </div>
+          </div>
+
+          <!-- 2012 -->
+          <div class="vt-item" data-tag="incident">
+            <div class="vt-dot"></div>
+            <div class="vt-card">
+              <div class="vt-meta">
+                <span class="vt-year">2012</span>
+                <span class="vt-location">UK</span>
+                <span class="vt-tag vt-tag--incident">Incident</span>
+              </div>
+              <div class="vt-title">Panne RBS/NatWest — 6,5 millions de clients bloqués 6 jours</div>
+              <div class="vt-desc">
+                Un composant CA7 (planificateur de batch des années 1980) mal mis à jour.
+                Le traitement de nuit ne s'exécute pas. Résultat : 6,5 millions de clients sans accès pendant six jours,
+                virements bloqués, salaires non versés. Amende FSA de <strong>175&nbsp;M£</strong>.
+              </div>
+              <div class="vt-source">Source : Financial Services Authority UK, rapport 2012</div>
+            </div>
+          </div>
+
+          <!-- 2016 -->
+          <div class="vt-item" data-tag="incident">
+            <div class="vt-dot"></div>
+            <div class="vt-card">
+              <div class="vt-meta">
+                <span class="vt-year">2016</span>
+                <span class="vt-location">Bangladesh</span>
+                <span class="vt-tag vt-tag--incident">Incident</span>
+              </div>
+              <div class="vt-title">Bangladesh Bank — 81&nbsp;M$ volés via SWIFT</div>
+              <div class="vt-desc">
+                Terminal SWIFT connecté via un switch réseau à 10$ sans firewall.
+                Système non patché. Absence totale de monitoring.
+                Les attaquants émettent 35 ordres de virement frauduleux vers les Philippines —
+                5 sont exécutés avant que la Federal Reserve de New York bloque les suivants.
+              </div>
+              <div class="vt-source">Source : BAE Systems Threat Intelligence Report, 2016</div>
+            </div>
+          </div>
+
+          <!-- 2018 -->
+          <div class="vt-item" data-tag="incident">
+            <div class="vt-dot"></div>
+            <div class="vt-card">
+              <div class="vt-meta">
+                <span class="vt-year">2018</span>
+                <span class="vt-location">UK</span>
+                <span class="vt-tag vt-tag--incident">Incident</span>
+              </div>
+              <div class="vt-title">TSB Bank — migration legacy ratée, 330&nbsp;M£ de pertes</div>
+              <div class="vt-desc">
+                Migration d'un système legacy Lloyds vers la plateforme Sabadell.
+                1,9 million de clients bloqués pendant des semaines. Données bancaires croisées entre comptes.
+                Système source non documenté, dépendances cachées, absence de tests de régression exhaustifs.
+                Le PDG démissionne.
+              </div>
+              <div class="vt-source">Source : Financial Conduct Authority UK, rapport 2019</div>
+            </div>
+          </div>
+
+          <!-- 2022 -->
+          <div class="vt-item" data-tag="loi">
+            <div class="vt-dot"></div>
+            <div class="vt-card">
+              <div class="vt-meta">
+                <span class="vt-year">2022</span>
+                <span class="vt-location">UE</span>
+                <span class="vt-tag vt-tag--loi">Loi</span>
+              </div>
+              <div class="vt-title">Publication du règlement DORA (UE 2022/2554)</div>
+              <div class="vt-desc">
+                L'UE tire les leçons de 20 ans d'incidents. Entrée en vigueur prévue : janvier 2025.
+                Cartographie des systèmes, tests de pénétration annuels,
+                déclaration d'incident sous 4h. Les ESN prestataires sont directement visées
+                en tant que « tiers ICT critiques ».
+              </div>
+              <div class="vt-source">Source : Journal officiel de l'UE — eur-lex.europa.eu</div>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="vt-item" data-tag="loi">
+            <div class="vt-dot"></div>
+            <div class="vt-card">
+              <div class="vt-meta">
+                <span class="vt-year">17 jan. 2025</span>
+                <span class="vt-location">UE</span>
+                <span class="vt-tag vt-tag--loi">Loi</span>
+              </div>
+              <div class="vt-title">DORA entre en vigueur — tolérance zéro pour le legacy non audité</div>
+              <div class="vt-desc">
+                Obligations contraignantes pour banques, assureurs et leurs prestataires.
+                MTB111 by Creative, en tant qu'ESN cliente de BNP Paribas, Allianz et de la Banque de France,
+                est directement concernée. Mon travail de refactoring Java prend soudainement
+                un sens réglementaire.
+              </div>
+              <div class="vt-source">Source : Règlement (UE) 2022/2554 — ACPR, Banque de France</div>
+            </div>
+          </div>
+
+          <!-- 2026 -->
+          <div class="vt-item" data-tag="analyse">
+            <div class="vt-dot"></div>
+            <div class="vt-card">
+              <div class="vt-meta">
+                <span class="vt-year">2026</span>
+                <span class="vt-location">Prévision</span>
+                <span class="vt-tag vt-tag--analyse">Analyse</span>
+              </div>
+              <div class="vt-title">Premières sanctions DORA attendues</div>
+              <div class="vt-desc">
+                Les autorités de supervision (ACPR, BCE) annoncent les premiers contrôles formels.
+                Pression maximale sur les systèmes non documentés et non auditables.
+                Les ESN qui n'ont pas entamé leur mise en conformité sont exposées à des amendes
+                et à la rupture de contrats avec leurs clients bancaires.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ANALYSE PERSONNELLE -->
+      <section class="section fade-in">
+        <p class="section__label">Point de vue</p>
+        <h2 class="section__title">Ce que j'en retiens</h2>
+
+        <div class="analyse-block">
+          <p class="analyse-block__label">Analyse personnelle · juin 2026</p>
+          <p class="analyse-block__title">Quand le refactoring devient un enjeu réglementaire</p>
+          <p class="analyse-block__text">
+            Travailler sur du code legacy bancaire chez MTB111 by Creative m'a rendu
+            cette veille concrète. Rendre du code auditable, des logs structurés,
+            une traçabilité des flux, une documentation des dépendances, ce n'est pas
+            qu'une bonne pratique de développeur. Depuis le 17 janvier 2025, c'est
+            une obligation réglementaire.
+          </p>
+          <p class="analyse-block__text">
+            Ce qui m'a le plus frappé, c'est la récurrence du même schéma dans chaque
+            incident : un système hors d'âge, une mise à jour mal maîtrisée, pas
+            d'environnement de test isolé, aucune traçabilité. Bangladesh Bank, TSB, RBS.
+            Trois continents, trois décennies, même cause racine.
+          </p>
+          <span class="analyse-block__callout">
+            Un log mal structuré peut devenir une non-conformité DORA. Un composant
+            non documenté est une surface d'attaque que personne ne sait défendre.
+            La sécurité des systèmes legacy n'est pas un sujet réservé aux experts
+            en cybersécurité. C'est le quotidien de tout développeur qui touche
+            du code bancaire en 2025.
+          </span>
+        </div>
+      </section>
+
+      <!-- DISPOSITIF DE VEILLE -->
+      <section class="section fade-in">
+        <p class="section__label">Méthode</p>
+        <h2 class="section__title">Mon dispositif de veille</h2>
+
+        <div class="dispositif-grid">
+          <div class="dispositif-card">
+            <span class="dispositif-card__icon">🔔</span>
+            <div class="dispositif-card__title">Alertes automatiques</div>
+            <div class="dispositif-card__text">
+              Google Alerts sur <code>legacy banking security</code>,
+              <code>DORA compliance</code> et <code>CVE Java Spring</code>.
+              Notifications quotidiennes filtrées.
+            </div>
+          </div>
+          <div class="dispositif-card">
+            <span class="dispositif-card__icon">📡</span>
+            <div class="dispositif-card__title">Flux RSS</div>
+            <div class="dispositif-card__text">
+              CERT-FR — bulletins de sécurité officiels de l'ANSSI.
+              LeMagIT pour l'actualité IT francophone.
+              Lecture quotidienne, synthèse hebdomadaire.
+            </div>
+          </div>
+          <div class="dispositif-card">
+            <span class="dispositif-card__icon">⚔️</span>
+            <div class="dispositif-card__title">Pratique CTF</div>
+            <div class="dispositif-card__text">
+              HackTheBox, TryHackMe, RootMe.
+              Comprendre comment exploiter une faille, c'est comprendre
+              pourquoi un système non patché est une cible facile.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOURCES -->
+      <section class="section fade-in">
+        <p class="section__label">Références</p>
+        <h2 class="section__title">Sources</h2>
+
+        <div class="sources-list">
+          <a href="https://www.ssi.gouv.fr" target="_blank" rel="noopener noreferrer" class="source-row">
+            <span class="source-row__type">Officiel FR</span>
+            <span class="source-row__name">ANSSI</span>
+            <span class="source-row__url">ssi.gouv.fr</span>
+          </a>
+          <a href="https://owasp.org/Top10" target="_blank" rel="noopener noreferrer" class="source-row">
+            <span class="source-row__type">Technique</span>
+            <span class="source-row__name">OWASP Top 10</span>
+            <span class="source-row__url">owasp.org/Top10</span>
+          </a>
+          <a href="https://nvd.nist.gov" target="_blank" rel="noopener noreferrer" class="source-row">
+            <span class="source-row__type">CVE</span>
+            <span class="source-row__name">NIST National Vulnerability Database</span>
+            <span class="source-row__url">nvd.nist.gov</span>
+          </a>
+          <a href="https://www.lemagit.fr" target="_blank" rel="noopener noreferrer" class="source-row">
+            <span class="source-row__type">Actualité IT</span>
+            <span class="source-row__name">LeMagIT</span>
+            <span class="source-row__url">lemagit.fr</span>
+          </a>
+          <a href="https://acpr.banque-france.fr" target="_blank" rel="noopener noreferrer" class="source-row">
+            <span class="source-row__type">Réglementaire</span>
+            <span class="source-row__name">ACPR — Banque de France</span>
+            <span class="source-row__url">acpr.banque-france.fr</span>
+          </a>
+          <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022R2554" target="_blank" rel="noopener noreferrer" class="source-row">
+            <span class="source-row__type">Règlement</span>
+            <span class="source-row__name">Règlement DORA (UE 2022/2554)</span>
+            <span class="source-row__url">eur-lex.europa.eu</span>
+          </a>
+          <div class="source-row" style="cursor:default;">
+            <span class="source-row__type">Rapport</span>
+            <span class="source-row__name">Verizon Data Breach Investigations Report 2023</span>
+            <span class="source-row__url">verizon.com/dbir</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__copy">© <span class="js-year"></span> Victor Issad. Tous droits réservés.</span>
+        <span class="footer__sub">Étudiant en BTS SIO SLAM · 3IFA Alençon · Session 2026</span>
+      </div>
+      <div class="footer__downloads">
+        <a href="../ressources/CV_Victor_ISSAD.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Mon CV
+        </a>
+        <a href="../ressources/Tableau_Synthese_E4.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Tableau de synthèse E4
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Timeline filter
+    const filterBar = document.getElementById('filterBar');
+    const items = document.querySelectorAll('.vt-item');
+
+    filterBar.addEventListener('click', function(e) {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+
+      // Update active button
+      filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      items.forEach(item => {
+        if (filter === 'tout' || item.dataset.tag === filter) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

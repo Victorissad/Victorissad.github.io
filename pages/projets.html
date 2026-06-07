@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets — Victor Issad</title>
+  <meta name="description" content="Projets de Victor Issad — Structur'All, RFTG, BAI Sandbox, Portfolio personnel, CTF, YesWeHack. Détails techniques et liens avec le tableau de synthèse E4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">VictorIssad</a>
+      <div class="nav__links" id="nav-links">
+        <a href="../index.html" class="nav__link">Accueil</a>
+        <a href="about.html" class="nav__link">À propos</a>
+        <a href="competences.html" class="nav__link">Compétences</a>
+        <a href="certifications.html" class="nav__link">Certifications</a>
+        <a href="projets.html" class="nav__link nav__link--active">Projets</a>
+        <a href="veille.html" class="nav__link">Veille</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__theme-btn js-theme-toggle" aria-label="Changer le thème">
+          <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav__burger js-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+
+      <div class="page-header" id="projets">
+        <h1>Mes projets</h1>
+        <p>Réalisations professionnelles, scolaires et personnelles. Cliquez sur "En savoir plus" pour voir les détails techniques et les compétences mobilisées pour l'épreuve E4.</p>
+      </div>
+
+      <!-- ===== 1ÈRE ANNÉE ===== -->
+      <section class="section fade-in">
+        <span class="section__label">2024–2025</span>
+        <h2 class="section__title">1ère année</h2>
+
+        <div class="projects-grid">
+
+          <!-- YesWeHack -->
+          <article class="project-tile">
+            <img src="../ressources/img/YesWeHack_logo.png" alt="YesWeHack — Bug bounty" class="projet-cover projet-cover--contain" style="background:#0f1117;padding:24px">
+            <div class="project-tile__body">
+              <div class="project-tile__category">Cybersécurité · MTB111</div>
+              <h3 class="project-tile__title">YesWeHack — Bug bounty</h3>
+              <p class="project-tile__desc">Participation à un programme de bug bounty sur la plateforme YesWeHack. Recherche de vulnérabilités sur des cibles définies, rédaction de rapports.</p>
+              <a href="yeswehack.html" class="project-tile__cta">En savoir plus →</a>
+            </div>
+          </article>
+
+          <!-- CTF OWASP -->
+          <article class="project-tile">
+            <img src="../ressources/img/owaspjuiceshop.png" alt="CTF OWASP Top 10" class="projet-cover" style="object-position:top center">
+            <div class="project-tile__body">
+              <div class="project-tile__category">Cybersécurité · MTB111</div>
+              <h3 class="project-tile__title">CTF OWASP Top 10 — ~100 défis</h3>
+              <p class="project-tile__desc">~100 défis CTF couvrant les catégories OWASP Top 10 : injection SQL, XSS, CSRF, authentification cassée, mauvaises configurations.</p>
+              <a href="ctf-owasp.html" class="project-tile__cta">En savoir plus →</a>
+            </div>
+          </article>
+
+          <!-- Structur'All recette -->
+          <article class="project-tile">
+            <img src="../ressources/img/logo_mtb111_v2.svg" alt="Structur'All — Cahiers de recette" class="projet-cover projet-cover--contain" style="background:#1a0505;padding:24px">
+            <div class="project-tile__body">
+              <div class="project-tile__category">Alternance · MTB111</div>
+              <h3 class="project-tile__title">Structur'All — Cahiers de recette & tests</h3>
+              <p class="project-tile__desc">Rédaction des cahiers de recette et exécution des campagnes de tests fonctionnels sur la plateforme Structur'All Machine®.</p>
+              <a href="structurall-recette.html" class="project-tile__cta">En savoir plus →</a>
+            </div>
+          </article>
+
+          <!-- Jeu à problèmes -->
+          <article class="project-tile">
+            <img src="../ressources/img/jeu_problemes_cover_v3.svg" alt="Jeu à problèmes — Java Spring Boot" class="projet-cover" style="object-fit:contain;background:#4a5568;padding:0;height:160px">
+            <div class="project-tile__body">
+              <div class="project-tile__category">Projet scolaire · ADP</div>
+              <h3 class="project-tile__title">Jeu à problèmes — Java / Spring Boot</h3>
+              <p class="project-tile__desc">Application Java/Spring Boot développée en équipe de 3 dans le cadre d'un projet scolaire. Jeu interactif autour de problèmes algorithmiques.</p>
+              <a href="jeu-problemes.html" class="project-tile__cta">En savoir plus →</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ===== 2ÈME ANNÉE ===== -->
+      <section class="section fade-in">
+        <span class="section__label">2025–2026</span>
+        <h2 class="section__title">2ème année</h2>
+
+        <div class="projects-grid">
+
+          <!-- Structur'All SAXLogger -->
+          <article class="project-tile">
+            <img src="../ressources/img/logo_mtb111_v2.svg" alt="Structur'All — SAXLogger Refactoring" class="projet-cover projet-cover--contain" style="background:#1a0505;padding:24px">
+            <div class="project-tile__body">
+              <div class="project-tile__category">Alternance · MTB111</div>
+              <h3 class="project-tile__title">Structur'All — SAXLogger Refactoring</h3>
+              <p class="project-tile__desc">Refactoring du système de logging de Structur'All — remplacement systématique de System.err par SAXLogger sur plusieurs centaines de fichiers Java.</p>
+              <a href="structurall.html" class="project-tile__cta">En savoir plus →</a>
+            </div>
+          </article>
+
+          <!-- RFTG -->
+          <article class="project-tile">
+            <img src="../ressources/img/Mario_admin.png" alt="RFTG — Rental Film To Go" class="projet-cover" style="object-position:center">
+            <div class="project-tile__body">
+              <div class="project-tile__category">Application Web, Mobile et API</div>
+              <h3 class="project-tile__title">RFTG</h3>
+              <p class="project-tile__desc">Application complète de location de DVDs : app Android Luigi, API REST Spring Boot Toad, web Laravel Mario, base MySQL Peach.</p>
+              <a href="rftg.html" class="project-tile__cta">En savoir plus →</a>
+            </div>
+          </article>
+
+          <!-- BAI Sandbox -->
+          <article class="project-tile">
+            <img src="../ressources/img/bai_sandbox_cover.svg" alt="BAI Sandbox — Cybersécurité Laravel" class="projet-cover">
+            <div class="project-tile__body">
+              <div class="project-tile__category">Cybersécurité · Bloc 3</div>
+              <h3 class="project-tile__title">BAI Sandbox</h3>
+              <p class="project-tile__desc">Application Laravel 11 avec audit de sécurité complet (ANSSI, CNIL, RGPD), ActionLogService, rate limiting.</p>
+              <a href="bai.html" class="project-tile__cta">En savoir plus →</a>
+            </div>
+          </article>
+
+          <!-- Portfolio -->
+          <article class="project-tile">
+            <img src="../ressources/img/ssportofolio.png" alt="Portfolio personnel — Victor Issad" class="projet-cover">
+            <div class="project-tile__body">
+              <div class="project-tile__category">Projet personnel · BTS SIO</div>
+              <h3 class="project-tile__title">Portfolio personnel</h3>
+              <p class="project-tile__desc">Portfolio web statique pour l'épreuve E4 du BTS SIO. HTML / CSS / JS vanilla, dark/light mode, design éditorial sobre. Vous le consultez actuellement.</p>
+              <a href="portfolio.html" class="project-tile__cta">En savoir plus →</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__copy">© <span class="js-year"></span> Victor Issad. Tous droits réservés.</span>
+        <span class="footer__sub">Étudiant en BTS SIO SLAM · 3IFA Alençon · Session 2026</span>
+      </div>
+      <div class="footer__downloads">
+        <a href="../ressources/CV_Victor_ISSAD.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Mon CV
+        </a>
+        <a href="../ressources/Tableau_Synthese_E4.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Tableau de synthèse E4
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

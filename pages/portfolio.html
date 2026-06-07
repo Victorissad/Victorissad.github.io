@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Victor Issad</title>
+  <meta name="description" content="Portfolio personnel HTML/CSS/JS vanilla — BTS SIO SLAM. Architecture, choix techniques et liens avec le tableau de synthèse E4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">VictorIssad</a>
+      <div class="nav__links" id="nav-links">
+        <a href="../index.html" class="nav__link">Accueil</a>
+        <a href="about.html" class="nav__link">À propos</a>
+        <a href="competences.html" class="nav__link">Compétences</a>
+        <a href="certifications.html" class="nav__link">Certifications</a>
+        <a href="projets.html" class="nav__link nav__link--active">Projets</a>
+        <a href="veille.html" class="nav__link">Veille</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__theme-btn js-theme-toggle" aria-label="Changer le thème">
+          <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav__burger js-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <section class="project-detail fade-in" style="border-top:none">
+        <a href="projets.html" class="project-detail__back">← Retour aux projets</a>
+        <h2 class="project-detail__title">Portfolio personnel</h2>
+        <p class="project-detail__subtitle">Projet personnel · Site que vous consultez actuellement</p>
+        <p class="project-detail__intro">
+          Site web personnel réalisé pour l'épreuve E4 du BTS SIO. Conçu de bout en bout en
+          <strong>HTML / CSS / JavaScript vanilla</strong>, sans framework ni build système, pour démontrer
+          la maîtrise des fondamentaux du web et la capacité à structurer un projet web de A à Z.
+          L'objectif : présenter mon parcours, mes compétences, mes réalisations et ma veille technologique
+          de manière professionnelle et accessible.
+        </p>
+
+        <div class="fact-strip">
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Type</div>
+            <div class="fact-strip__value">Site web personnel</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Stack</div>
+            <div class="fact-strip__value">HTML · CSS · JS vanilla</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Pages</div>
+            <div class="fact-strip__value">7 pages cohérentes</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Hébergement</div>
+            <div class="fact-strip__value">GitHub Pages</div>
+          </div>
+        </div>
+
+        <div class="tech-badges">
+          <span class="tech-badge"><img src="../assets/img/icons/html5.svg" alt="">HTML5</span>
+          <span class="tech-badge"><img src="../assets/img/icons/css3.svg" alt="">CSS3</span>
+          <span class="tech-badge"><img src="../assets/img/icons/javascript.svg" alt="">JavaScript</span>
+          <span class="tech-badge"><img src="../assets/img/icons/git.svg" alt="">Git</span>
+          <span class="tech-badge"><img src="../assets/img/icons/vscode.svg" alt="">VS Code</span>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Conception</span>
+          <h3 class="project-section__title">Approche et choix techniques</h3>
+
+          <h4 class="mt-lg">Pourquoi du vanilla ?</h4>
+          <p>
+            Choix délibéré de ne pas utiliser de framework (React, Vue) ni de build system (Vite, Webpack)
+            pour démontrer la maîtrise des fondamentaux du web. Le portfolio fonctionne en ouvrant simplement
+            <code>index.html</code>, sans dépendance npm, sans serveur de build — uniquement des fichiers
+            statiques que n'importe quel hébergement gratuit peut servir.
+          </p>
+
+          <h4 class="mt-lg">Architecture</h4>
+          <ul class="proj-list">
+            <li><strong>7 pages HTML</strong> indépendantes mais visuellement cohérentes : accueil, à propos, compétences, certifications, projets, veille, contact</li>
+            <li><strong>1 fichier CSS</strong> centralisé avec variables CSS pour le thème (light/dark), typographie modulaire et grille responsive</li>
+            <li><strong>1 fichier JS</strong> vanilla pour le toggle dark/light, le menu mobile, les animations au scroll et la persistance des préférences via localStorage</li>
+            <li><strong>SVG inline</strong> pour les logos technos et les drapeaux (offline-first)</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Fonctionnalités</span>
+          <h3 class="project-section__title">Caractéristiques techniques</h3>
+
+          <ul class="proj-list">
+            <li><strong>Mode clair / sombre</strong> avec toggle persistant (localStorage) et anti-FOUC via IIFE en début de page</li>
+            <li><strong>Responsive design</strong> avec breakpoints à 800px (menu burger) et 600px (single column)</li>
+            <li><strong>Accessibilité</strong> : skip link, ARIA labels, contrastes WCAG AA, navigation clavier complète</li>
+            <li><strong>Performance</strong> : aucune dépendance externe sauf Google Fonts, pas de JavaScript bloquant</li>
+            <li><strong>Animations subtiles</strong> au scroll via IntersectionObserver (fade-in)</li>
+            <li><strong>Print-friendly</strong> : nav et footer cachés à l'impression</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Stack technique</span>
+          <h3 class="project-section__title">Détails</h3>
+          <table class="stack-table">
+            <tr><td>Structure</td><td>HTML5 sémantique</td></tr>
+            <tr><td>Style</td><td>CSS3 — variables CSS, Grid, Flexbox, animations</td></tr>
+            <tr><td>Interactivité</td><td>JavaScript vanilla (ES6+)</td></tr>
+            <tr><td>Stockage local</td><td>localStorage (préférence de thème)</td></tr>
+            <tr><td>Typographie</td><td>Inter + JetBrains Mono (Google Fonts)</td></tr>
+            <tr><td>Versioning</td><td>Git / GitHub</td></tr>
+            <tr><td>Hébergement</td><td>GitHub Pages</td></tr>
+            <tr><td>IDE</td><td>VS Code + Live Server</td></tr>
+          </table>
+        </div>
+
+        <div class="e4-block">
+          <div class="e4-block__title">Liens avec le tableau de synthèse E4</div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C3</span>
+            <div>
+              <div class="e4-row__skill">Développer la présence en ligne</div>
+              <div class="e4-row__sub">Participer à l'évolution d'un site web</div>
+            </div>
+            <div class="e4-row__just">Conception, développement et déploiement d'un site web personnel destiné à présenter mon profil professionnel à de futurs employeurs, au jury BTS et à mon réseau.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C5</span>
+            <div>
+              <div class="e4-row__skill">Mettre à disposition un service informatique</div>
+              <div class="e4-row__sub">Déployer un service</div>
+            </div>
+            <div class="e4-row__just">Mise en production sur GitHub Pages — service web accessible publiquement, à URL stable. Le déploiement passe par un push Git sur la branche principale qui déclenche une publication automatique.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C6</span>
+            <div>
+              <div class="e4-row__skill">Organiser son développement professionnel</div>
+              <div class="e4-row__sub">Gérer son identité professionnelle</div>
+            </div>
+            <div class="e4-row__just">Le portfolio est l'élément central de mon identité professionnelle en ligne. Il regroupe parcours, compétences, certifications, réalisations et veille — un point d'entrée unique pour tout interlocuteur professionnel.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C6</span>
+            <div>
+              <div class="e4-row__skill">Organiser son développement professionnel</div>
+              <div class="e4-row__sub">Mettre en place son environnement d'apprentissage personnel</div>
+            </div>
+            <div class="e4-row__just">Apprentissage autonome des fondamentaux du web (CSS Grid moderne, variables CSS, IntersectionObserver) en dehors du cursus académique, mise en place d'un environnement de développement frontend efficace.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__copy">© <span class="js-year"></span> Victor Issad. Tous droits réservés.</span>
+        <span class="footer__sub">Étudiant en BTS SIO SLAM · 3IFA Alençon · Session 2026</span>
+      </div>
+      <div class="footer__downloads">
+        <a href="../ressources/CV_Victor_ISSAD.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Mon CV
+        </a>
+        <a href="../ressources/Tableau_Synthese_E4.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Tableau de synthèse E4
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

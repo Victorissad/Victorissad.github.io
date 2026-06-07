@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAI Sandbox — Victor Issad</title>
+  <meta name="description" content="BAI Sandbox — Application Laravel 11 avec audit de sécurité ANSSI, CNIL et RGPD. Projet Bloc 3 BTS SIO SLAM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">VictorIssad</a>
+      <div class="nav__links" id="nav-links">
+        <a href="../index.html" class="nav__link">Accueil</a>
+        <a href="about.html" class="nav__link">À propos</a>
+        <a href="competences.html" class="nav__link">Compétences</a>
+        <a href="certifications.html" class="nav__link">Certifications</a>
+        <a href="projets.html" class="nav__link nav__link--active">Projets</a>
+        <a href="veille.html" class="nav__link">Veille</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__theme-btn js-theme-toggle" aria-label="Changer le thème">
+          <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav__burger js-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <section class="project-detail fade-in" style="border-top:none">
+        <a href="projets.html" class="project-detail__back">← Retour aux projets</a>
+        <h2 class="project-detail__title">BAI Sandbox</h2>
+        <p class="project-detail__subtitle">Projet Bloc 3 · Cybersécurité · 2025-2026</p>
+        <p class="project-detail__intro">
+          <strong>BAI Sandbox</strong> est une application Laravel 11 développée dans le cadre du Bloc 3
+          du BTS SIO, avec un accent fort sur la conformité réglementaire et la sécurité.
+          Réalisation d'un audit complet selon les référentiels <strong>ANSSI</strong>, <strong>CNIL</strong>
+          et <strong>RGPD</strong>. Bien que ce projet relève principalement du Bloc 3, il mobilise
+          également des compétences du Bloc 1.
+        </p>
+
+        <div class="fact-strip">
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Cadre</div>
+            <div class="fact-strip__value">Bloc 3 · BTS SIO 2ᵉ année</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Stack</div>
+            <div class="fact-strip__value">Laravel 11 · PHP 8.3</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Référentiels</div>
+            <div class="fact-strip__value">ANSSI · CNIL · RGPD</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Statut</div>
+            <div class="fact-strip__value">En cours</div>
+          </div>
+        </div>
+
+        <div class="tech-badges">
+          <span class="tech-badge"><img src="../assets/img/icons/php.svg" alt="">PHP 8.3</span>
+          <span class="tech-badge"><img src="../assets/img/icons/laravel.svg" alt="">Laravel 11</span>
+          <span class="tech-badge"><img src="../assets/img/icons/mysql.svg" alt="">MySQL</span>
+          <span class="tech-badge"><img src="../assets/img/icons/composer.svg" alt="">Composer</span>
+          <span class="tech-badge"><img src="../assets/img/icons/vscode.svg" alt="">VS Code</span>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Sécurité</span>
+          <h3 class="project-section__title">Mesures de sécurité implémentées</h3>
+
+          <ul class="proj-list">
+            <li><strong>ActionLogService</strong> — journalisation complète des actions utilisateurs (qui, quoi, quand) pour traçabilité et audit</li>
+            <li><strong>Rate limiting</strong> — protection des endpoints sensibles contre les attaques par force brute et le scraping</li>
+            <li><strong>Conformité RGPD</strong> — cartographie des données personnelles, gestion des droits utilisateurs (accès, rectification, suppression)</li>
+            <li><strong>Audit ANSSI / CNIL</strong> — rédaction d'un rapport d'audit selon les référentiels officiels</li>
+            <li><strong>Validation et échappement</strong> — protection contre les injections SQL, XSS, CSRF (mécanismes natifs Laravel renforcés)</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <h3 class="project-section__title">Stack technique</h3>
+          <table class="stack-table">
+            <tr><td>Backend</td><td>PHP 8.3 · Laravel 11</td></tr>
+            <tr><td>Base de données</td><td>MySQL</td></tr>
+            <tr><td>Frontend</td><td>Blade · Tailwind CSS</td></tr>
+            <tr><td>Sécurité</td><td>ActionLogService · Rate limiter Laravel · Hashing Bcrypt</td></tr>
+            <tr><td>Référentiels d'audit</td><td>ANSSI · CNIL · RGPD</td></tr>
+          </table>
+        </div>
+
+        <div class="e4-block">
+          <div class="e4-block__title">Liens avec le tableau de synthèse E4</div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C1</span>
+            <div>
+              <div class="e4-row__skill">Gérer le patrimoine informatique</div>
+              <div class="e4-row__sub">Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</div>
+            </div>
+            <div class="e4-row__just">Application directe des référentiels ANSSI, CNIL et RGPD lors de l'audit. Ces référentiels font autorité dans le secteur public et privé en France et structurent la démarche de mise en conformité.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C1</span>
+            <div>
+              <div class="e4-row__skill">Gérer le patrimoine informatique</div>
+              <div class="e4-row__sub">Vérifier le respect des règles d'utilisation des équipements et services informatiques</div>
+            </div>
+            <div class="e4-row__just">L'ActionLogService trace l'ensemble des actions utilisateurs pour permettre l'audit a posteriori et vérifier le respect des conditions d'utilisation de l'application.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C2</span>
+            <div>
+              <div class="e4-row__skill">Répondre aux incidents et demandes</div>
+              <div class="e4-row__sub">Mettre en place et vérifier les niveaux d'habilitation associés à un service</div>
+            </div>
+            <div class="e4-row__just">Définition fine des permissions par rôle utilisateur, vérification systématique des habilitations sur chaque endpoint sensible — protection en profondeur contre les escalades de privilèges.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C5</span>
+            <div>
+              <div class="e4-row__skill">Mettre à disposition un service informatique</div>
+              <div class="e4-row__sub">Vérifier les conditions de la continuité d'un service informatique</div>
+            </div>
+            <div class="e4-row__just">Le rate limiting protège la disponibilité du service contre les attaques par déni de service basique. La journalisation permet d'identifier rapidement la cause d'un incident.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__copy">© <span class="js-year"></span> Victor Issad. Tous droits réservés.</span>
+        <span class="footer__sub">Étudiant en BTS SIO SLAM · 3IFA Alençon · Session 2026</span>
+      </div>
+      <div class="footer__downloads">
+        <a href="../ressources/CV_Victor_ISSAD.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Mon CV
+        </a>
+        <a href="../ressources/Tableau_Synthese_E4.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Tableau de synthèse E4
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

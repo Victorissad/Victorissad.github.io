@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RFTG — Victor Issad</title>
+  <meta name="description" content="RFTG (Rental Film To Go) — Application complète de location de DVDs : Android Luigi, API Spring Boot Toad, Laravel Mario, MySQL Peach. Projet Bloc 2 BTS SIO.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">VictorIssad</a>
+      <div class="nav__links" id="nav-links">
+        <a href="../index.html" class="nav__link">Accueil</a>
+        <a href="about.html" class="nav__link">À propos</a>
+        <a href="competences.html" class="nav__link">Compétences</a>
+        <a href="certifications.html" class="nav__link">Certifications</a>
+        <a href="projets.html" class="nav__link nav__link--active">Projets</a>
+        <a href="veille.html" class="nav__link">Veille</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__theme-btn js-theme-toggle" aria-label="Changer le thème">
+          <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav__burger js-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <section class="project-detail fade-in" style="border-top:none">
+        <a href="projets.html" class="project-detail__back">← Retour aux projets</a>
+        <h2 class="project-detail__title">RFTG — Rental Film To Go</h2>
+        <p class="project-detail__subtitle">Projet Bloc 2 · BTS SIO SLAM · 2ᵉ année · 2025-2026</p>
+        <p class="project-detail__intro">
+          <strong>RFTG</strong> est un projet personnel autour d'un système de location de DVDs, réalisé dans
+          le cadre du Bloc 2 de 2ᵉ année. Il regroupe <strong>quatre composants interconnectés</strong>
+          autour d'une même API REST commune (mutualisée avec d'autres étudiants), chacun nommé d'après
+          un personnage de l'univers Mario.
+        </p>
+
+        <div class="fact-strip">
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Cadre</div>
+            <div class="fact-strip__value">Bloc 2 · BTS SIO 2ᵉ année</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Mode</div>
+            <div class="fact-strip__value">Solo (API mutualisée)</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Base de données</div>
+            <div class="fact-strip__value">MySQL (dérivée Sakila)</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Composants</div>
+            <div class="fact-strip__value">4 (Mobile · Web · API · DB)</div>
+          </div>
+        </div>
+
+        <div class="tech-badges">
+          <span class="tech-badge"><img src="../assets/img/icons/java.svg" alt="">Java</span>
+          <span class="tech-badge"><img src="../assets/img/icons/android.svg" alt="">Android SDK</span>
+          <span class="tech-badge"><img src="../assets/img/icons/spring.svg" alt="">Spring Boot</span>
+          <span class="tech-badge"><img src="../assets/img/icons/php.svg" alt="">PHP</span>
+          <span class="tech-badge"><img src="../assets/img/icons/laravel.svg" alt="">Laravel</span>
+          <span class="tech-badge"><img src="../assets/img/icons/mysql.svg" alt="">MySQL</span>
+          <span class="tech-badge"><img src="../assets/img/icons/postman.svg" alt="">Postman</span>
+        </div>
+
+        <img src="../ressources/img/rftg-architecture.png"
+             alt="Diagramme d'architecture du système RFTG"
+             class="proj-img proj-img--diagram"
+             loading="lazy">
+        <p class="proj-img__caption">Architecture du système RFTG : les clients (web Mario, mobile Luigi) communiquent avec l'API REST Spring Boot Toad, qui accède à la base MySQL Peach via un ORM JPA.</p>
+
+        <div class="subproj-grid">
+          <div class="subproj-card">
+            <div class="subproj-card__label">Mobile · Android</div>
+            <h3 class="subproj-card__title">Luigi</h3>
+            <div class="subproj-card__role">Application cliente</div>
+            <p class="subproj-card__desc">App Android native en Java pour parcourir le catalogue, gérer un panier et louer des films.</p>
+          </div>
+          <div class="subproj-card">
+            <div class="subproj-card__label">Web · Laravel</div>
+            <h3 class="subproj-card__title">Mario</h3>
+            <div class="subproj-card__role">Application administrative</div>
+            <p class="subproj-card__desc">Interface web interne pour la gestion des films, DVDs, clients et locations.</p>
+          </div>
+          <div class="subproj-card">
+            <div class="subproj-card__label">Backend · Spring Boot</div>
+            <h3 class="subproj-card__title">Toad</h3>
+            <div class="subproj-card__role">API REST centrale</div>
+            <p class="subproj-card__desc">API REST sécurisée par JWT, pont unique entre les clients, le personnel et la base de données.</p>
+          </div>
+          <div class="subproj-card">
+            <div class="subproj-card__label">Data · MySQL</div>
+            <h3 class="subproj-card__title">Peach</h3>
+            <div class="subproj-card__role">Base de données</div>
+            <p class="subproj-card__desc">Schéma dérivé de Sakila, enrichi de migrations versionnées (v0.2 → v0.7).</p>
+          </div>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Luigi</span>
+          <h3 class="project-section__title">Application mobile Android</h3>
+
+          <img src="../ressources/img/rftg-luigi-cas-utilisation.png"
+               alt="Diagramme des cas d'utilisation de Luigi"
+               class="proj-img proj-img--diagram"
+               loading="lazy">
+          <p class="proj-img__caption">Diagramme des cas d'utilisation côté client : connexion JWT, consultation et recherche du catalogue, gestion du panier, validation de la réservation.</p>
+
+          <h4 class="mt-lg">Stack technique</h4>
+          <table class="stack-table">
+            <tr><td>Langage</td><td>Java (Android SDK)</td></tr>
+            <tr><td>Communication réseau</td><td>Retrofit + AsyncTask</td></tr>
+            <tr><td>Persistance locale</td><td>SQLite</td></tr>
+            <tr><td>Authentification</td><td>Token JWT</td></tr>
+          </table>
+
+          <h4 class="mt-lg">Architecture</h4>
+          <ul class="proj-list">
+            <li><strong>Activities</strong> — gestion de l'interface et des interactions utilisateur</li>
+            <li><strong>AsyncTask</strong> — opérations réseau non bloquantes</li>
+            <li><strong>Managers Singleton</strong> — logique métier centralisée (panier, session, URLs)</li>
+            <li><strong>DatabaseHelper</strong> — accès SQLite encapsulé</li>
+            <li><strong>Adapters</strong> — liaison données ↔ vues (RecyclerView)</li>
+          </ul>
+
+          <h4 class="mt-lg">Parcours utilisateur</h4>
+          <div class="journey">
+            <span class="journey__step">Connexion</span><span class="journey__sep">→</span>
+            <span class="journey__step">Catalogue</span><span class="journey__sep">→</span>
+            <span class="journey__step">Détail film</span><span class="journey__sep">→</span>
+            <span class="journey__step">Panier</span><span class="journey__sep">→</span>
+            <span class="journey__step">Checkout</span>
+          </div>
+
+          <div class="gallery-mobile">
+            <img src="../ressources/img/rftg-luigi-connexion.png"
+                 alt="Écran de connexion JWT de l'application Luigi"
+                 class="proj-img" loading="lazy">
+            <img src="../ressources/img/rftg-luigi-catalogue.png"
+                 alt="Catalogue des films disponibles avec recherche"
+                 class="proj-img" loading="lazy">
+            <img src="../ressources/img/rftg-luigi-detail-film.png"
+                 alt="Fiche détaillée d'un film"
+                 class="proj-img" loading="lazy">
+            <img src="../ressources/img/rftg-luigi-panier.png"
+                 alt="Panier d'achat avec total et options de validation"
+                 class="proj-img" loading="lazy">
+          </div>
+          <p class="proj-img__caption">Parcours utilisateur complet sur émulateur Android — de la connexion à la validation de la réservation.</p>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Mario</span>
+          <h3 class="project-section__title">Application web Laravel</h3>
+
+          <img src="../ressources/img/rftg-mario-cas-utilisation.png"
+               alt="Diagramme des cas d'utilisation de Mario"
+               class="proj-img proj-img--diagram"
+               loading="lazy">
+          <p class="proj-img__caption">Diagramme des cas d'utilisation côté administrateur : authentification, CRUD complet sur les films, gestion de l'inventaire.</p>
+
+          <h4 class="mt-lg">Contexte</h4>
+          <p>
+            Application web de gestion interne pour le personnel administratif. Toutes les données sont
+            consommées via l'API REST Toad — aucune base locale, architecture totalement découplée.
+          </p>
+
+          <h4 class="mt-lg">Stack technique</h4>
+          <table class="stack-table">
+            <tr><td>Backend</td><td>PHP 8.2 · Laravel</td></tr>
+            <tr><td>Frontend</td><td>Blade · Bootstrap 5</td></tr>
+            <tr><td>API externe</td><td>REST API Toad (microservice Java)</td></tr>
+            <tr><td>Authentification</td><td>JWT en session, Bearer token sur appels API</td></tr>
+          </table>
+
+          <h4 class="mt-lg">Fonctionnalités</h4>
+          <ul class="proj-list">
+            <li><strong>Films</strong> — liste, fiche détail, création, modification, suppression</li>
+            <li><strong>Inventaire DVDs</strong> — gestion du stock physique par film</li>
+            <li><strong>Clients</strong> — CRUD complet avec gestion de l'état actif/inactif</li>
+            <li><strong>Locations</strong> — suivi temps réel avec changement de statut (En cours / Panier / Terminé)</li>
+          </ul>
+
+          <div class="gallery-web">
+            <img src="../ressources/img/rftg-mario-connexion.png"
+                 alt="Page de connexion de l'interface admin Mario"
+                 class="proj-img gallery-web__full" loading="lazy">
+            <img src="../ressources/img/rftg-mario-films.png"
+                 alt="Liste des 1001 films côté admin avec actions CRUD"
+                 class="proj-img" loading="lazy">
+            <img src="../ressources/img/rftg-mario-stock.png"
+                 alt="Gestion du stock — 4581 exemplaires DVD répartis sur les magasins"
+                 class="proj-img" loading="lazy">
+          </div>
+          <p class="proj-img__caption">Interface d'administration web : connexion, liste des films (1001 entrées), gestion du stock (4581 exemplaires).</p>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Toad</span>
+          <h3 class="project-section__title">API REST centrale</h3>
+
+          <h4 class="mt-lg">Présentation</h4>
+          <p>
+            Toad est l'API REST commune au projet RFTG. Elle expose les routes de consultation du catalogue,
+            de gestion du panier, de location, d'administration des stocks, des employés et des transactions.
+            L'API est mutualisée entre plusieurs étudiants travaillant chacun sur leur composant.
+          </p>
+
+          <h4 class="mt-lg">Stack technique</h4>
+          <table class="stack-table">
+            <tr><td>Backend</td><td>Spring Boot (Java 17)</td></tr>
+            <tr><td>Sécurité</td><td>Spring Security + JWT</td></tr>
+            <tr><td>Persistance</td><td>Spring Data JPA / Hibernate</td></tr>
+            <tr><td>Base de données</td><td>MySQL 8</td></tr>
+            <tr><td>Build</td><td>Maven</td></tr>
+            <tr><td>Documentation API</td><td>OpenAPI 3.0 (Swagger) + Postman</td></tr>
+          </table>
+
+          <h4 class="mt-lg">Architecture</h4>
+          <p>
+            L'API suit une architecture classique en couches :
+            <code>Controller → Service → Repository → JPA Entity</code>.
+            La base de données est dérivée du schéma Sakila (Oracle), enrichie de migrations versionnées (v0.2 → v0.7).
+          </p>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Peach</span>
+          <h3 class="project-section__title">Base de données MySQL</h3>
+
+          <h4 class="mt-lg">Présentation</h4>
+          <p>
+            Peach est la base de données MySQL du projet RFTG. Le schéma est dérivé du modèle Sakila d'Oracle,
+            adapté pour les besoins fonctionnels du système de location.
+          </p>
+
+          <h4 class="mt-lg">Caractéristiques</h4>
+          <ul class="proj-list">
+            <li>Schéma adapté de <strong>Sakila</strong> (modèle Oracle de référence)</li>
+            <li>Migrations versionnées de v0.2 à v0.7 — historique reproductible</li>
+            <li>Tables principales : films, dvds, clients, locations, employees, magasins</li>
+            <li>Contraintes d'intégrité référentielle, index sur les colonnes de recherche fréquente</li>
+          </ul>
+
+          <img src="../ressources/img/rftg-mcd-peach.png"
+               alt="Modèle conceptuel de données de la base Peach"
+               class="proj-img"
+               loading="lazy">
+          <p class="proj-img__caption">Modèle conceptuel de données — entités centrales (Film, Customer, Rental, Inventory) avec leurs relations et cardinalités.</p>
+        </div>
+
+        <div class="e4-block">
+          <div class="e4-block__title">Liens avec le tableau de synthèse E4</div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C1</span>
+            <div>
+              <div class="e4-row__skill">Gérer le patrimoine informatique</div>
+              <div class="e4-row__sub">Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</div>
+            </div>
+            <div class="e4-row__just">L'API Toad respecte les standards REST, le protocole HTTP, OpenAPI 3.0 et les conventions JWT pour l'authentification — alignée sur les pratiques professionnelles du secteur.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C1</span>
+            <div>
+              <div class="e4-row__skill">Gérer le patrimoine informatique</div>
+              <div class="e4-row__sub">Recenser et identifier les ressources numériques</div>
+            </div>
+            <div class="e4-row__just">Le catalogue Peach recense l'ensemble des films et exemplaires DVD disponibles. Chaque ressource est inventoriée et exposée via l'API Toad, navigable et filtrable depuis les clients Luigi (mobile) et Mario (web).</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C2</span>
+            <div>
+              <div class="e4-row__skill">Répondre aux incidents et demandes</div>
+              <div class="e4-row__sub">Mettre en place et vérifier les niveaux d'habilitation associés à un service</div>
+            </div>
+            <div class="e4-row__just">L'authentification JWT garantit que seuls les utilisateurs autorisés (clients vs personnel) accèdent aux endpoints correspondant à leur rôle. Spring Security applique cette ségrégation côté API Toad.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C2</span>
+            <div>
+              <div class="e4-row__skill">Répondre aux incidents et demandes</div>
+              <div class="e4-row__sub">Traiter des demandes concernant les applications</div>
+            </div>
+            <div class="e4-row__just">Mario implémente les modules Clients et Locations qui répondent aux besoins opérationnels du personnel : création, consultation, mise à jour et suppression de données via formulaires reliés à l'API.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C4</span>
+            <div>
+              <div class="e4-row__skill">Travailler en mode projet</div>
+              <div class="e4-row__sub">Analyser les objectifs et les modalités d'organisation d'un projet</div>
+            </div>
+            <div class="e4-row__just">Le projet a nécessité une phase d'analyse du cahier des charges, le découpage en composants interopérables (mobile, web, API, DB) et la définition d'une convention d'API commune avec les autres étudiants utilisant Toad.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C4</span>
+            <div>
+              <div class="e4-row__skill">Travailler en mode projet</div>
+              <div class="e4-row__sub">Recenser et identifier les ressources numériques</div>
+            </div>
+            <div class="e4-row__just">Modélisation complète des entités métier (films, stocks, clients, magasins, employés) dans Peach, exposées et administrables via l'API Toad et les interfaces Mario / Luigi.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C5</span>
+            <div>
+              <div class="e4-row__skill">Mettre à disposition un service informatique</div>
+              <div class="e4-row__sub">Déployer un service</div>
+            </div>
+            <div class="e4-row__just">L'application Luigi est packagée pour fonctionner sur un large parc d'appareils Android, avec une gestion des URL de déploiement adaptable selon l'environnement (émulateur, serveur de test, production).</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C5</span>
+            <div>
+              <div class="e4-row__skill">Mettre à disposition un service informatique</div>
+              <div class="e4-row__sub">Réaliser les tests d'intégration et d'acceptation d'un service</div>
+            </div>
+            <div class="e4-row__just">Chaque endpoint REST de Toad a été testé via Postman — collection couvrant les scénarios nominaux et les cas d'erreur. Validation manuelle des parcours utilisateur de bout en bout sur Mario et Luigi.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">C5</span>
+            <div>
+              <div class="e4-row__skill">Mettre à disposition un service informatique</div>
+              <div class="e4-row__sub">Vérifier les conditions de la continuité d'un service informatique</div>
+            </div>
+            <div class="e4-row__just">La vérification de disponibilité du stock avant location évite les incohérences et garantit la fiabilité du service pour l'utilisateur final, côté API et côté interface.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__copy">© <span class="js-year"></span> Victor Issad. Tous droits réservés.</span>
+        <span class="footer__sub">Étudiant en BTS SIO SLAM · 3IFA Alençon · Session 2026</span>
+      </div>
+      <div class="footer__downloads">
+        <a href="../ressources/CV_Victor_ISSAD.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Mon CV
+        </a>
+        <a href="../ressources/Tableau_Synthese_E4.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Tableau de synthèse E4
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

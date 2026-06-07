@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTF OWASP Top 10 — Victor Issad</title>
+  <meta name="description" content="~100 défis CTF sur OWASP Juice Shop couvrant le Top 10 OWASP : injections SQL, XSS, broken authentication, CSRF, sensitive data exposure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">VictorIssad</a>
+      <div class="nav__links" id="nav-links">
+        <a href="../index.html" class="nav__link">Accueil</a>
+        <a href="about.html" class="nav__link">À propos</a>
+        <a href="competences.html" class="nav__link">Compétences</a>
+        <a href="certifications.html" class="nav__link">Certifications</a>
+        <a href="projets.html" class="nav__link nav__link--active">Projets</a>
+        <a href="veille.html" class="nav__link">Veille</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__theme-btn js-theme-toggle" aria-label="Changer le thème">
+          <svg class="theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <button class="nav__burger js-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+      <section class="project-detail fade-in" style="border-top:none">
+        <a href="projets.html" class="project-detail__back">← Retour aux projets</a>
+
+        <img src="../ressources/img/owaspjuiceshop.png" alt="OWASP Juice Shop"
+             style="max-width:100%;max-height:220px;display:block;margin-bottom:2rem;border-radius:12px;object-fit:cover;object-position:top center">
+
+        <h2 class="project-detail__title">CTF OWASP Top 10 — ~100 défis</h2>
+        <p class="project-detail__subtitle">Cybersécurité · MTB111 by Creative · 03/2025 → 06/2025</p>
+        <p class="project-detail__intro">
+          Capture The Flag basé sur le <strong>Top 10 OWASP</strong> via <strong>OWASP Juice Shop</strong>,
+          une application e-commerce volontairement vulnérable développée par OWASP à des fins pédagogiques.
+          ~100 défis couvrant les principales catégories de vulnérabilités web : injections SQL, XSS,
+          broken authentication, contrôle d'accès défaillant, CSRF, sensitive data exposure,
+          mauvaises configurations de sécurité.
+        </p>
+
+        <div class="fact-strip">
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Format</div>
+            <div class="fact-strip__value">CTF</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Plateforme</div>
+            <div class="fact-strip__value">OWASP Juice Shop</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Défis</div>
+            <div class="fact-strip__value">~100</div>
+          </div>
+          <div class="fact-strip__item">
+            <div class="fact-strip__label">Période</div>
+            <div class="fact-strip__value">03/2025 → 06/2025</div>
+          </div>
+        </div>
+
+        <div class="tech-badges">
+          <span class="tech-badge">Burp Suite</span>
+          <span class="tech-badge">OWASP Juice Shop</span>
+          <span class="tech-badge">Terminal</span>
+          <span class="tech-badge">Navigateur</span>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Contexte</span>
+          <h3 class="project-section__title">OWASP Juice Shop — application volontairement vulnérable</h3>
+          <p>
+            <strong>OWASP Juice Shop</strong> est une application web e-commerce open source conçue par l'OWASP
+            (Open Web Application Security Project) spécifiquement à des fins d'apprentissage et d'entraînement
+            en sécurité applicative. Elle contient intentionnellement des centaines de vulnérabilités couvrant
+            toutes les catégories du Top 10 OWASP, ce qui en fait le terrain d'entraînement de référence
+            pour les praticiens de la sécurité offensive et défensive.
+          </p>
+          <p>
+            Les défis sont organisés en niveaux de difficulté (1 à 6 étoiles) et chaque flag capturé
+            déverrouille un score et un feedback pédagogique.
+          </p>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Catégories couvertes</span>
+          <h3 class="project-section__title">Top 10 OWASP — vulnérabilités abordées</h3>
+          <table class="stack-table">
+            <tr><td>A01 — Broken Access Control</td><td>IDOR, accès à des ressources sans autorisation, manipulation de JWT</td></tr>
+            <tr><td>A02 — Cryptographic Failures</td><td>Exposition de données sensibles, mots de passe faibles, tokens prévisibles</td></tr>
+            <tr><td>A03 — Injection</td><td>Injections SQL sur formulaires de connexion et champs de recherche</td></tr>
+            <tr><td>A05 — Security Misconfiguration</td><td>Endpoints exposés, erreurs révélatrices, headers manquants</td></tr>
+            <tr><td>A07 — XSS</td><td>XSS réfléchi et persistant dans les champs commentaires et produits</td></tr>
+            <tr><td>A08 — CSRF</td><td>Requêtes forgées exploitant l'absence de jeton anti-CSRF</td></tr>
+          </table>
+        </div>
+
+        <div class="project-section">
+          <span class="project-section__tag">Méthodologie</span>
+          <h3 class="project-section__title">Approche et outils utilisés</h3>
+          <ul class="proj-list">
+            <li><strong>Burp Suite</strong> — interception et modification des requêtes HTTP/S, répétition (Repeater), fuzzing</li>
+            <li><strong>DevTools navigateur</strong> — analyse du code source, des cookies, des tokens et des appels réseau</li>
+            <li><strong>Terminal</strong> — commandes curl, manipulation de JWT, décodage base64</li>
+            <li><strong>Analyse des réponses API</strong> — identification d'endpoints non documentés, lecture des messages d'erreur</li>
+          </ul>
+        </div>
+
+        <div class="e4-block">
+          <div class="e4-block__title">Liens avec le tableau de synthèse E4</div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">B1</span>
+            <div>
+              <div class="e4-row__skill">Gérer le patrimoine informatique</div>
+              <div class="e4-row__sub">Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</div>
+            </div>
+            <div class="e4-row__just">Application directe du référentiel OWASP Top 10 — standard international de référence pour la sécurité applicative, utilisé dans les audits professionnels et les politiques de conformité.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">B2</span>
+            <div>
+              <div class="e4-row__skill">Répondre aux incidents et aux demandes d'assistance</div>
+              <div class="e4-row__sub">Traiter des demandes concernant les applications</div>
+            </div>
+            <div class="e4-row__just">Pratique de l'identification, reproduction et analyse de vulnérabilités dans un environnement contrôlé — compétences directement transférables à la réponse à des incidents de sécurité réels.</div>
+          </div>
+
+          <div class="e4-row">
+            <span class="e4-row__code">B6</span>
+            <div>
+              <div class="e4-row__skill">Développement professionnel</div>
+              <div class="e4-row__sub">Mettre en place son environnement d'apprentissage personnel</div>
+            </div>
+            <div class="e4-row__just">~100 défis résolus de façon autonome et progressive, renforçant la maîtrise des outils de sécurité offensive (Burp Suite) et la compréhension des mécanismes d'attaque et de défense applicatifs.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__copy">© <span class="js-year"></span> Victor Issad. Tous droits réservés.</span>
+        <span class="footer__sub">Étudiant en BTS SIO SLAM · 3IFA Alençon · Session 2026</span>
+      </div>
+      <div class="footer__downloads">
+        <a href="../ressources/CV_Victor_ISSAD.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Mon CV
+        </a>
+        <a href="../ressources/Tableau_Synthese_E4.pdf" class="footer__download" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Tableau de synthèse E4
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
