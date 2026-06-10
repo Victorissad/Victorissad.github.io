@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -77,30 +77,21 @@
           <span class="tech-badge">Navigateur</span>
         </div>
 
-        <div class="project-section">
-          <span class="project-section__tag">Contexte</span>
-          <h3 class="project-section__title">Bug bounty et divulgation responsable</h3>
-          <p>
-            Le bug bounty est un programme par lequel des entreprises invitent des chercheurs en sécurité
-            à tester leurs systèmes en échange d'une récompense en cas de découverte valide.
-            <strong>YesWeHack</strong> est la principale plateforme européenne de bug bounty,
-            référençant des dizaines de programmes ouverts de grandes organisations publiques et privées.
-          </p>
-          <p>
-            Dans ce cadre, j'ai travaillé sur des cibles réelles (type Deezer et autres plateformes grand public),
-            en respectant strictement le périmètre défini par chaque programme (scope) et les règles
-            de divulgation responsable (responsible disclosure).
-          </p>
-        </div>
+        <figure style="margin:0 0 8px">
+          <img src="../ressources/img/yeswehack-programmes.png"
+               alt="Interface YesWeHack — programmes de bug bounty publics"
+               class="proj-img" style="max-width:100%" loading="lazy">
+          <figcaption class="proj-img__caption">Interface YesWeHack — programmes de bug bounty publics disponibles sur la plateforme</figcaption>
+        </figure>
 
         <div class="project-section">
           <span class="project-section__tag">Vulnérabilités testées</span>
           <h3 class="project-section__title">Types de tests réalisés</h3>
           <ul class="proj-list">
-            <li><strong>Injections SQL</strong> — tentatives d'injection sur les formulaires et paramètres d'URL</li>
-            <li><strong>XSS (Cross-Site Scripting)</strong> — tests d'injection de scripts dans les champs réfléchis et persistants</li>
-            <li><strong>Contrôles d'accès défaillants</strong> — vérification de l'autorisation sur les ressources protégées (IDOR, escalade de privilèges)</li>
-            <li><strong>Exposition de données sensibles</strong> — analyse des réponses API, headers HTTP, et endpoints non sécurisés</li>
+            <li><strong>Injections SQL</strong> — tests d'injection sur formulaires et paramètres d'URL</li>
+            <li><strong>XSS (Cross-Site Scripting)</strong> — injection de scripts dans les champs réfléchis et persistants</li>
+            <li><strong>Contrôles d'accès défaillants</strong> — IDOR et escalade de privilèges sur ressources protégées</li>
+            <li><strong>Exposition de données sensibles</strong> — analyse des réponses API, headers HTTP et endpoints non sécurisés</li>
           </ul>
         </div>
 
@@ -108,18 +99,8 @@
           <span class="project-section__tag">Livrables</span>
           <h3 class="project-section__title">Rédaction de rapports de vulnérabilités</h3>
           <p>
-            Pour chaque vulnérabilité identifiée, rédaction d'un rapport formel structuré comprenant :
-          </p>
-          <ul class="proj-list">
-            <li>Description précise de la vulnérabilité et de son impact</li>
-            <li>Étapes de reproduction détaillées (proof of concept)</li>
-            <li>Capture d'écran ou payload de démonstration</li>
-            <li>Niveau de criticité estimé (selon CVSS)</li>
-            <li>Recommandations de remédiation</li>
-          </ul>
-          <p>
-            Les rapports ont été soumis directement aux équipes sécurité des éditeurs via la plateforme YesWeHack,
-            dans le respect des délais et des règles de chaque programme.
+            Pour chaque vulnérabilité identifiée, rédaction d'un rapport formel avec description, étapes de
+            reproduction, proof of concept et recommandations de remédiation.
           </p>
         </div>
 
@@ -127,30 +108,23 @@
           <div class="e4-block__title">Liens avec le tableau de synthèse E4</div>
 
           <div class="e4-row">
-            <span class="e4-row__code">B1</span>
+            <span class="e4-row__code">B1.1</span>
             <div>
               <div class="e4-row__skill">Gérer le patrimoine informatique</div>
-              <div class="e4-row__sub">Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</div>
             </div>
-            <div class="e4-row__just">Application des méthodologies OWASP et CVSS pour qualifier les vulnérabilités trouvées, en lien avec les standards de sécurité reconnus dans le secteur.</div>
+            <ul class="e4-row__just-list">
+              <li>Application des méthodologies OWASP et CVSS pour qualifier les vulnérabilités identifiées sur les plateformes testées.</li>
+            </ul>
           </div>
 
           <div class="e4-row">
-            <span class="e4-row__code">B2</span>
+            <span class="e4-row__code">B1.6</span>
             <div>
-              <div class="e4-row__skill">Répondre aux incidents et aux demandes d'assistance</div>
-              <div class="e4-row__sub">Traiter des demandes concernant les applications</div>
+              <div class="e4-row__skill">Organiser son développement professionnel</div>
             </div>
-            <div class="e4-row__just">Identification, analyse et signalement structuré de vulnérabilités sur des plateformes réelles — démarche directement assimilable à la gestion d'incidents de sécurité.</div>
-          </div>
-
-          <div class="e4-row">
-            <span class="e4-row__code">B6</span>
-            <div>
-              <div class="e4-row__skill">Développement professionnel</div>
-              <div class="e4-row__sub">Mettre en place son environnement d'apprentissage personnel</div>
-            </div>
-            <div class="e4-row__just">Pratique autonome de la recherche de vulnérabilités sur des cibles réelles dans un cadre légal et éthique, renforçant les compétences en sécurité offensive applicative.</div>
+            <ul class="e4-row__just-list">
+              <li>Pratique autonome de la recherche de vulnérabilités dans un cadre légal et éthique, en dehors du cursus académique.</li>
+            </ul>
           </div>
         </div>
       </section>

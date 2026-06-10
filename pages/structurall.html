@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -42,11 +42,9 @@
         <h2 class="project-detail__title">Structur'All — SAXLogger Refactoring</h2>
         <p class="project-detail__subtitle">Alternance · MTB111 by Creative · Septembre 2024 → en cours</p>
         <p class="project-detail__intro">
-          <strong>Structur'All Machine®</strong> est la plateforme principale de MTB111 by Creative — une solution
-          labellisée FinTech par Finance Innovation, utilisée par des institutions financières
-          (BNP Paribas, Allianz, Banque de France) pour modéliser visuellement leurs processus métier sans
-          réécrire leur SI. Ma mission : R&amp;D sur la maintenance et l'amélioration de ce produit, en particulier
-          le remplacement systématique d'un système de logging vétuste basé sur <code>System.err</code>.
+          Mission de R&amp;D chez MTB111 by Creative : remplacement systématique du système de logging vétuste
+          de Structur'All Machine, basé sur <code>System.err</code>, par <strong>SAXLogger</strong> — le logger
+          interne structuré de l'entreprise.
         </p>
 
         <div class="fact-strip">
@@ -101,14 +99,6 @@
         <div class="project-section">
           <span class="project-section__tag">Mission · SAXLogger</span>
           <h3 class="project-section__title">Refactoring du logging legacy</h3>
-
-          <h4 class="mt-lg">Contexte</h4>
-          <p>
-            Avant mon arrivée, l'ensemble des sorties de log de Structur'All transitait par <code>System.err</code> et
-            <code>System.out</code> — des appels statiques non catégorisés, sans horodatage,
-            sans niveau de criticité. Cette dette technique rendait l'application impossible à monitorer en
-            production et bloquait toute mise en conformité avec les exigences d'auditabilité du secteur bancaire.
-          </p>
 
           <h4 class="mt-lg">Stack technique</h4>
           <table class="stack-table">
@@ -172,66 +162,46 @@
           <div class="e4-block__title">Liens avec le tableau de synthèse E4</div>
 
           <div class="e4-row">
-            <span class="e4-row__code">C1</span>
+            <span class="e4-row__code">B1.1</span>
             <div>
               <div class="e4-row__skill">Gérer le patrimoine informatique</div>
-              <div class="e4-row__sub">Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</div>
             </div>
-            <div class="e4-row__just">Le refactoring s'inscrit dans une démarche de mise en conformité avec les standards de logging professionnels (horodatage, niveaux de criticité, format structuré) attendus dans le secteur bancaire et exigés par la réglementation DORA.</div>
+            <ul class="e4-row__just-list">
+              <li>Le refactoring s'inscrit dans une démarche de mise en conformité avec les standards de logging professionnels (horodatage, niveaux de criticité, format structuré) attendus dans le secteur bancaire et exigés par la réglementation DORA.</li>
+              <li>Le système de logging structuré est une condition technique préalable à toute supervision en production. Sans logs exploitables, aucune détection d'incident ni aucun audit n'est possible.</li>
+            </ul>
           </div>
 
           <div class="e4-row">
-            <span class="e4-row__code">C1</span>
+            <span class="e4-row__code">B1.2</span>
             <div>
-              <div class="e4-row__skill">Gérer le patrimoine informatique</div>
-              <div class="e4-row__sub">Vérifier les conditions de la continuité d'un service informatique</div>
+              <div class="e4-row__skill">Répondre aux incidents et aux demandes d'assistance et d'évolution</div>
             </div>
-            <div class="e4-row__just">Le système de logging structuré est une condition technique préalable à toute supervision en production. Sans logs exploitables, aucune détection d'incident ni aucun audit n'est possible.</div>
+            <ul class="e4-row__just-list">
+              <li>Le besoin a été formulé par l'équipe interne MTB111 comme une demande d'évolution technique. J'ai pris en charge l'analyse, la conception de la solution (scripts d'automatisation) et la livraison sous validation par code review.</li>
+            </ul>
           </div>
 
           <div class="e4-row">
-            <span class="e4-row__code">C2</span>
-            <div>
-              <div class="e4-row__skill">Répondre aux incidents et demandes</div>
-              <div class="e4-row__sub">Traiter des demandes concernant les applications</div>
-            </div>
-            <div class="e4-row__just">Le besoin a été formulé par l'équipe interne MTB111 comme une demande d'évolution technique. J'ai pris en charge l'analyse, la conception de la solution (scripts d'automatisation) et la livraison sous validation par code review.</div>
-          </div>
-
-          <div class="e4-row">
-            <span class="e4-row__code">C4</span>
+            <span class="e4-row__code">B1.4</span>
             <div>
               <div class="e4-row__skill">Travailler en mode projet</div>
-              <div class="e4-row__sub">Mettre en place des outils de gestion de projet</div>
             </div>
-            <div class="e4-row__just">Utilisation quotidienne de GitLab pour le versioning, les merge requests, les revues de code (18+ commentaires résolus avec Axel Gaillard) et le suivi des itérations sur la durée du refactoring.</div>
+            <ul class="e4-row__just-list">
+              <li>Utilisation quotidienne de GitLab pour le versioning, les merge requests, les revues de code (18+ commentaires résolus avec Axel Gaillard) et le suivi des itérations sur la durée du refactoring.</li>
+              <li>Phase préalable d'analyse : recensement des occurrences sur 4 modules, identification des cas automatisables vs manuels, planification des itérations module par module.</li>
+            </ul>
           </div>
 
           <div class="e4-row">
-            <span class="e4-row__code">C4</span>
+            <span class="e4-row__code">B1.5</span>
             <div>
-              <div class="e4-row__skill">Travailler en mode projet</div>
-              <div class="e4-row__sub">Analyser les objectifs et les modalités d'organisation d'un projet</div>
+              <div class="e4-row__skill">Mettre à disposition des utilisateurs un service informatique</div>
             </div>
-            <div class="e4-row__just">Phase préalable d'analyse : recensement des occurrences sur 4 modules, identification des cas automatisables vs manuels, planification des itérations module par module.</div>
-          </div>
-
-          <div class="e4-row">
-            <span class="e4-row__code">C5</span>
-            <div>
-              <div class="e4-row__skill">Mettre à disposition un service informatique</div>
-              <div class="e4-row__sub">Déployer un service</div>
-            </div>
-            <div class="e4-row__just">Les utilitaires LoggerChecker et ClassOriginFinder ont été livrés à l'équipe MTB111 sous forme d'outils Java exécutables, accompagnés de leur documentation d'utilisation.</div>
-          </div>
-
-          <div class="e4-row">
-            <span class="e4-row__code">C5</span>
-            <div>
-              <div class="e4-row__skill">Mettre à disposition un service informatique</div>
-              <div class="e4-row__sub">Réaliser les tests d'intégration et d'acceptation d'un service</div>
-            </div>
-            <div class="e4-row__just">Validation systématique du refactoring par exécution des tests existants après chaque module traité, contrôle de non-régression et relecture humaine des changements automatisés.</div>
+            <ul class="e4-row__just-list">
+              <li>Les utilitaires LoggerChecker et ClassOriginFinder ont été livrés à l'équipe MTB111 sous forme d'outils Java exécutables, accompagnés de leur documentation d'utilisation.</li>
+              <li>Validation systématique du refactoring par exécution des tests existants après chaque module traité, contrôle de non-régression et relecture humaine des changements automatisés.</li>
+            </ul>
           </div>
         </div>
       </section>

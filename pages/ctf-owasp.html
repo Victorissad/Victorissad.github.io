@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -79,43 +79,34 @@
           <span class="tech-badge">Navigateur</span>
         </div>
 
-        <div class="project-section">
-          <span class="project-section__tag">Contexte</span>
-          <h3 class="project-section__title">OWASP Juice Shop — application volontairement vulnérable</h3>
-          <p>
-            <strong>OWASP Juice Shop</strong> est une application web e-commerce open source conçue par l'OWASP
-            (Open Web Application Security Project) spécifiquement à des fins d'apprentissage et d'entraînement
-            en sécurité applicative. Elle contient intentionnellement des centaines de vulnérabilités couvrant
-            toutes les catégories du Top 10 OWASP, ce qui en fait le terrain d'entraînement de référence
-            pour les praticiens de la sécurité offensive et défensive.
-          </p>
-          <p>
-            Les défis sont organisés en niveaux de difficulté (1 à 6 étoiles) et chaque flag capturé
-            déverrouille un score et un feedback pédagogique.
-          </p>
-        </div>
+        <figure style="margin:0 0 8px">
+          <img src="../ressources/img/owasp-challenge.png"
+               alt="Défi OWASP Juice Shop — découverte de la route /administration"
+               class="proj-img" style="max-width:100%" loading="lazy">
+          <figcaption class="proj-img__caption">Défi OWASP Juice Shop — découverte de la route /administration via inspection du code source minifié</figcaption>
+        </figure>
 
         <div class="project-section">
           <span class="project-section__tag">Catégories couvertes</span>
           <h3 class="project-section__title">Top 10 OWASP — vulnérabilités abordées</h3>
-          <table class="stack-table">
-            <tr><td>A01 — Broken Access Control</td><td>IDOR, accès à des ressources sans autorisation, manipulation de JWT</td></tr>
-            <tr><td>A02 — Cryptographic Failures</td><td>Exposition de données sensibles, mots de passe faibles, tokens prévisibles</td></tr>
-            <tr><td>A03 — Injection</td><td>Injections SQL sur formulaires de connexion et champs de recherche</td></tr>
-            <tr><td>A05 — Security Misconfiguration</td><td>Endpoints exposés, erreurs révélatrices, headers manquants</td></tr>
-            <tr><td>A07 — XSS</td><td>XSS réfléchi et persistant dans les champs commentaires et produits</td></tr>
-            <tr><td>A08 — CSRF</td><td>Requêtes forgées exploitant l'absence de jeton anti-CSRF</td></tr>
-          </table>
+          <ul class="proj-list">
+            <li>A01 — Broken Access Control (IDOR, manipulation de JWT)</li>
+            <li>A02 — Cryptographic Failures (exposition de données, tokens prévisibles)</li>
+            <li>A03 — Injection (injections SQL sur formulaires et recherche)</li>
+            <li>A05 — Security Misconfiguration (endpoints exposés, headers manquants)</li>
+            <li>A07 — XSS (réfléchi et persistant)</li>
+            <li>A08 — CSRF (absence de jeton anti-CSRF)</li>
+          </ul>
         </div>
 
         <div class="project-section">
           <span class="project-section__tag">Méthodologie</span>
           <h3 class="project-section__title">Approche et outils utilisés</h3>
           <ul class="proj-list">
-            <li><strong>Burp Suite</strong> — interception et modification des requêtes HTTP/S, répétition (Repeater), fuzzing</li>
-            <li><strong>DevTools navigateur</strong> — analyse du code source, des cookies, des tokens et des appels réseau</li>
+            <li><strong>Burp Suite</strong> — interception et modification des requêtes HTTP/S, fuzzing</li>
+            <li><strong>DevTools navigateur</strong> — analyse du code source, cookies, tokens et appels réseau</li>
             <li><strong>Terminal</strong> — commandes curl, manipulation de JWT, décodage base64</li>
-            <li><strong>Analyse des réponses API</strong> — identification d'endpoints non documentés, lecture des messages d'erreur</li>
+            <li><strong>Analyse des réponses API</strong> — endpoints non documentés, messages d'erreur</li>
           </ul>
         </div>
 
@@ -123,30 +114,23 @@
           <div class="e4-block__title">Liens avec le tableau de synthèse E4</div>
 
           <div class="e4-row">
-            <span class="e4-row__code">B1</span>
+            <span class="e4-row__code">B1.1</span>
             <div>
               <div class="e4-row__skill">Gérer le patrimoine informatique</div>
-              <div class="e4-row__sub">Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</div>
             </div>
-            <div class="e4-row__just">Application directe du référentiel OWASP Top 10 — standard international de référence pour la sécurité applicative, utilisé dans les audits professionnels et les politiques de conformité.</div>
+            <ul class="e4-row__just-list">
+              <li>Application du référentiel OWASP Top 10 pour identifier et qualifier les vulnérabilités rencontrées.</li>
+            </ul>
           </div>
 
           <div class="e4-row">
-            <span class="e4-row__code">B2</span>
+            <span class="e4-row__code">B1.6</span>
             <div>
-              <div class="e4-row__skill">Répondre aux incidents et aux demandes d'assistance</div>
-              <div class="e4-row__sub">Traiter des demandes concernant les applications</div>
+              <div class="e4-row__skill">Organiser son développement professionnel</div>
             </div>
-            <div class="e4-row__just">Pratique de l'identification, reproduction et analyse de vulnérabilités dans un environnement contrôlé — compétences directement transférables à la réponse à des incidents de sécurité réels.</div>
-          </div>
-
-          <div class="e4-row">
-            <span class="e4-row__code">B6</span>
-            <div>
-              <div class="e4-row__skill">Développement professionnel</div>
-              <div class="e4-row__sub">Mettre en place son environnement d'apprentissage personnel</div>
-            </div>
-            <div class="e4-row__just">~100 défis résolus de façon autonome et progressive, renforçant la maîtrise des outils de sécurité offensive (Burp Suite) et la compréhension des mécanismes d'attaque et de défense applicatifs.</div>
+            <ul class="e4-row__just-list">
+              <li>~100 défis résolus en autonomie, renforçant la maîtrise des outils de sécurité offensive (Burp Suite).</li>
+            </ul>
           </div>
         </div>
       </section>
